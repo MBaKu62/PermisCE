@@ -13,16 +13,16 @@ document.querySelectorAll('.onglet').forEach(link => {
 });
 
 // ------------------ Fiches (thèmes et oral) ------------------
-function toggleFiche(elem) {
-  const content = elem.querySelector('.fiche-content');
-  if (!content) return;
+function toggleFiche(elem){
+  const content = elem.querySelector('.answer');
+  if (!answer) return;
 
-  if (content.classList.contains('active')) {
-    content.style.maxHeight = 0;
-    content.classList.remove('active');
+  if (answer.classList.contains('active')){
+    answer.style.maxHeight = null;
+    answer.classList.remove('active');
   } else {
-    content.classList.add('active');
-    content.style.maxHeight = content.scrollHeight + "px";
+    answer.classList.add('active');
+    answer.style.maxHeight = answer.scrollHeight + "px";
   }
 }
 
@@ -151,4 +151,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
 
