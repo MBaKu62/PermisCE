@@ -31,7 +31,7 @@ function toggleAnswer(elem) {
   const answer = elem.querySelector('.answer');
   if (!answer) return;
 
-  if (answer.classList.contains('active')) {
+  if (!answer.classList.contains('active')) {
     answer.style.maxHeight = 0;
     answer.classList.remove('active');
   } else {
@@ -149,4 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('actif');
     });
   });
+  function cliseALLAnswers() {
+    document.querySelectorAll('.answer.active').forEach(answer => {
+      answer.style.maxHeight = 0;
+      answer.classList.remove('active');
+      answer.style.overflow = '';
+    });
+  }
+
 });
