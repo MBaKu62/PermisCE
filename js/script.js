@@ -149,12 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('actif');
     });
   });
-  function cliseALLAnswers() {
-    document.querySelectorAll('.answer.active').forEach(answer => {
-      answer.style.maxHeight = 0;
-      answer.classList.remove('active');
-      answer.style.overflow = '';
-    });
-  }
 
 });
+
