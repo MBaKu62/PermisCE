@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permis CE – MMA, Thèmes et Fiches Oral</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Titre principale -->
+  <div class="app-shell">
+    <header>
+      <div class="app-icon">🚚</div>
+      <div>
+        <h1>PERMIS CE</h1>
+      </div>
+    </header>
+
+    <!-- Onglets -->
+    <div class="onglets-menu">
+      <a class="onglet actif" href="#accueil">Accueil</a>
+      <a class="onglet" href="#mma">MMA</a>
+      <a class="onglet" href="#theme">Thèmes</a>
+      <a class="onglet" href="#ficheecrite">Fiches Ecrite</a>
+      <a class="onglet" href="#ficheoral">Fiches Oral</a>
+      <a class="onglet" href="#socle1">Socle 1</a>
+      <a class="onglet" href="#attelage">Attelage</a>
+      <a class="onglet" href="#socle2">Socle 2</a>
+      <a class="onglet" href="#socle3">Socle 3</a>
+      <a class="onglet" href="#detelage">Dételage</a>
+    </div>
+
+    <!-- Accueil -->
+<div id="accueil" class="tab-content active">
+  <div class="section">
+    <h2 class="theme-titre">🚛 Bienvenue - Permis CE <br>Prépare ton examen poids lourds</h2>
+  </div>
+
+  <div class="section">
+    <h3>📋 Contenu de l'app</h3>
+    <ul>
+      <li>Masses & calculs (PTRA, PTAC, CU...)</li>
+      <li>6 Thèmes</li>
+      <li>20 Fiches écrites</li>
+      <li>12 Fiches oral</li>
+      <li>Socle 1</li>
+      <li>Attelage</li>
+      <li>Socle 2</li>
+      <li>Socle 3</li>
+      <li>Dételage</li>
+    </ul>
+  </div>
+
+  <!-- Section image après le contenu -->
+  <div class="section" style="text-align:center; transition: transform 0.3s ease;">
+    <img src="images/acceuil/feuille-notation.jpg" alt="Camion permis CE" 
+         style="width:100%; max-width:350px; border-radius:16px; box-shadow:0 6px 16px rgba(0,0,0,0.5); transition: transform 0.3s ease;">
+  </div>
+</div>
+
+    <!-- MMA -->
+<div id="mma" class="tab-content">
+
+  <!-- Titre MMA -->
+  <div class="section">
+    <h2 class="theme-titre">Calcul de la MMA</h2>
+  </div>
+
+  <!-- Rappels de base -->
+  <div class="section">
+    <div class="badge"><span class="badge-dot"></span>Rappels de base</div>
+    <h2>1. Définitions essentielles</h2>
+    <p class="small">Pour bien lire la carte grise et répondre aux questions masses du permis.</p>
+    <ul>
+      <li><strong>PV</strong> : poids à vide</li>
+      <li><strong>PTAC</strong> : poids total autorisé</li>
+      <li><strong>PTRA</strong> : poids total roulant autorisé</li>
+      <li><strong>CU</strong> : charge utile = PTAC - PV</li>
+      <li><strong>MMA</strong> : masse max autorisée</li>
+    </ul>
+  </div>
+
+  <!-- Ensemble routier -->
+  <div class="section">
+    <div class="badge"><span class="badge-dot"></span>Ensemble routier</div>
+    <h2>2. Calculer la MMA (PMA) d’un ensemble</h2>
+    <p class="small">
+      Méthode d’examen : on retient la plus petite valeur entre PTRA, la limite réglementaire selon le nombre d’essieux et le calcul de masse.
+    </p>
+
+    <!-- Étape 1 -->
+    <h3>Étape 1 - PTRA</h3>
+    <ul>
+      <li>Repérer le PTRA sur la carte grise du véhicule moteur (case F.3).</li>
+      <li>C’est la première limite à ne pas dépasser pour l’ensemble.</li>
+    </ul>
+
+    <!-- Étape 2 -->
+    <h3>Étape 2 – Regarder le nombre d’essieux</h3>
+    <ul>
+      <li>Compter le nombre total d’essieux (véhicule moteur + remorque / semi).</li>
+      <li>En simplifié :
+        <br>– Ensemble 4 essieux (ex : 2+2) → 38 t max.
+        <br>– Ensemble 5 essieux et plus → 44 t max (cas général national).
+      </li>
+    </ul>
+
+    <!-- Étape 3 -->
+    <h3>Étape 3 – Calcul du poids de l'ensemble</h3>
+    <ul>
+      <li>Véhicule isolé :
+        <br>⚫ PV - PTAC
+      </li>
+      <li>Train routier :
+        <br>⚫ PTAC véhicule isolé + PTAC remorque
+      </li>
+      <li>Tracteur routier :
+        <br>⚫ PV tracteur routier + PTAC de la semi-remorque
+      </li>
+    </ul>
+  </div>
+
+  <!-- Véhicule isolé -->
+  <div class="section">
+    <div class="badge"><span class="badge-dot"></span>Véhicule isolé</div>
+    <h2>3. Véhicule isolé – Calcul CU</h2>
+    <p class="small">
+      Pour un véhicule seul, la MMA sera toujours le PTAC du véhicule et la charge utile se calcule directement à partir de PV et PTAC.
+    </p>
+    <div class="inputs-row">
+      <label>PV véhicule (kg)<input type="number" id="pvVeh"></label>
+      <label>PTAC véhicule (kg)<input type="number" id="ptacVeh"></label>
+    </div>
+    <button class="action" id="btnCalcCUVeh"><span class="icon">➕</span> Calculer la CU</button>
+    <div class="result" id="resCUVeh"></div>
+  </div>
+
+  <!-- Véhicule articulé et train routier -->
+  <div class="section">
+    <div class="badge"><span class="badge-dot"></span>Véhicule articulé & train routier</div>
+    <h2>4. Ensemble routier – contrôles de masses</h2>
+    <p class="small">
+      Deux cas : train routier (PTAC + PTAC) et tracteur + semi (PV tracteur + PTAC semi), à comparer au PTRA.
+    </p>
+
+    <!-- 4.1 Train routier -->
+    <h3>4.1 Train routier: PTAC + PTAC vs PTRA</h3>
+    <div class="inputs-row">
+      <label>PTAC camion (kg)<input type="number" id="ptacCamion"></label>
+      <label>PTAC remorque (kg)<input type="number" id="ptacRemCR"></label>
+      <label>PTRA de l’ensemble (kg)<input type="number" id="ptraCR"></label>
+    </div>
+    <button class="action" id="btnCheckCR"><span class="icon">✔️</span> Vérifier</button>
+    <div class="result" id="resCR"></div>
+
+    <!-- 4.2 Tracteur + semi-remorque -->
+    <h3>4.2 Tracteur + semi-remorque: PV tracteur + PTAC semi vs PTRA</h3>
+    <div class="inputs-row">
+      <label>PV tracteur (kg)<input type="number" id="pvTract"></label>
+      <label>PTAC semi‑remorque (kg)<input type="number" id="ptacSemi"></label>
+      <label>PTRA de l’ensemble (kg)<input type="number" id="ptraArt"></label>
+    </div>
+    <button class="action" id="btnCheckArticule"><span class="icon">✔️</span> Vérifier</button>
+    <div class="result" id="resArt"></div>
+  </div>
+
+  <!-- Véhicule articulé – Calcul CU -->
+  <div class="section">
+    <div class="badge"><span class="badge-dot"></span>Véhicule articulé</div>
+    <h2>5. Véhicule articulé – calcul de la CU</h2>
+    <p class="small">
+      Même principe : tous les poids à vide de l'ensemble des véhicules moins le PTAC remorque/semi-remorque et véhicule isolé.
+    </p>
+    <div class="inputs-row">
+      <label>PV l'ensemble des véhicules (kg)<input type="number" id="pvRem"></label>
+      <label>Masse max autorisée (kg)<input type="number" id="ptacRem"></label>
+    </div>
+    <button class="action" id="btnCalcCURem"><span class="icon">➕</span> Calculer la CU</button>
+    <div class="result" id="resCURem"></div>
+  </div>
+
+</div>
+
+    <!-- Thèmes -->
+<div id="theme" class="tab-content">
+  <div class="section">
+    <h2 class="theme-titre">6 Thèmes Plateau Permis CE</h2>
+  </div>
+  <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 1 – Documents de bord, triangle, extincteur</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Le candidat présente le contenu des porte-documents présents dans le véhicule :
+          <br>- certificat d'immatriculation (concordance et validité de la visite technique) pour le véhicule tracteur et la remorque ;
+          <br>- certificat d'assurance (concordance et validité) pour le véhicule tracteur et laremorque ;
+          <br>- carte routière détaillée du secteur d'examen, taxe à l'essieu ;
+          <br>- constat amiable ;
+          <br>- manuel d'utilisation. </li>
+        <li>Il s'assure de la présence :
+          <br>- des 2 triangles de présignalisation et de l’éthylotest obligatoire ;
+          <br>- de(s) l'extincteur(s) ;
+          <br>- du vêtement de haute visibilité. Il n’est pas fait référence au vêtement de haute visibilité lorsqu’il est porté par le candidat.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 2 – Feux, contrôles, accessoires</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Le candidat vérifie l'état et le fonctionnement de :
+          <br>3 feux, choisis par l’expert dans la liste suivante : feux de position, feux de croisement, feux de route, feux de brouillard avant, feux de brouillard arrière, feux de marche arrière, feux stop, feux d'encombrement, feux indicateurs de changement de direction, feux de détresse, feux de plaques d'immatriculation, feux diurnes, feux d'angle, feux de stationnement ...
+          <br>L’expert veille à ne pas demander un contrôle déjà effectué lors des vérifications courantes de sécurité.
+          <br>Le candidat doit connaître l'emplacement, le rôle et le fonctionnement des dispositifs de contrôle et des accessoires. </li>
+        <li>L'expert interroge le candidat sur :
+          <br>2 dispositifs de contrôle (voyants, témoins, ordinateur de bord, cadrans de contrôle..., à l'exclusion du chronotachygraphe) ;
+          <br>1 accessoire (essuie-glaces, ventilation, avertisseur sonore, commandes..., à l'exclusion de l'autoradio et du système de navigation par satellite).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 3 – Niveaux, glaces, rétroviseurs, essuie-glaces</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Le candidat annonce et montre les orifices de remplissage des différents niveaux :
+          <br>- huile moteur, liquide de refroidissement, lave-glace ;
+          <br>- liquide dépolluant (AdBlue/urée) ;
+          <br>- assistance de direction, assistance d'embrayage, liquide de frein. </li>
+        <li>Il annonce les contrôles à effectuer concernant :
+          <br>- les rétroviseurs (état et fixation) ;
+          <br>- les glaces et pare-brise (état et propreté) ;
+          <br>- les essuie-glaces (état).</li>
+      </ul>
+    </div>
+  </div>
+   <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 4 – Pneumatiques, roues, suspension, direction</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Le candidat contrôle une roue du véhicule tracteur et une roue de la remorque. En cas de présence d'un essieu jumelé, le contrôle se fera impérativement sur un jumelage.
+          <br>- pneumatique : état de la bande de roulement, des flancs, pression visuelle.
+          <br>- roue et suspension : si le carrossage et/ou l’enjoliveur le permettent :
+          <br>- le candidat s'assure de l'absence de corps étranger dans le jumelage ;
+          <br>- il vérifie la présence et le serrage apparent des écrous de roues ;
+          <br>- il contrôle visuellement l'état de la suspension (état des lames, des coussins d'air,
+          <br>- absence de fuite d'air, de fuite hydraulique sur amortisseur...) et du garde-boue.
+          <br>- assistance de direction :</li>
+        <li>Deux contrôles sont prévus :
+          <br>- vérification du niveau du bocal d’assistance de direction ;
+          <br>- un essai en tournant le volant d'un demi-tour environ, en avançant sur une courte distance (afin d'éviter de tourner les roues en statique) pour vérifier l'absence de bruits anormaux et de points de résistance.
+          <br>Pour éviter un démarrage supplémentaire du véhicule, ce contrôle de l’assistance de direction s’effectuera juste avant le repérage du parcours de maniabilité.
+          <br>A cet effet, le candidat fera le contrôle du bocal d’assistance de direction suivi d’une explication théorique de l’essai. Son évaluation et l’attribution de la notation porteront uniquement sur ces deux éléments.
+          <br>L’essai pratique est réalisé mais non évalué. Compte tenu du positionnement de cet essai, l’expert pourra rappeler au candidat qu’il doit l’effectuer avant le repérage de l’épreuve de maniabilité en marche avant.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 5 – Caractéristiques de l’ensemble</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Le candidat présente son ensemble de véhicules :
+          <br>- marque, type, puissance du véhicule tracteur ;
+          <br>- il annonce les porte-à-faux avant du véhicule tracteur et arrière de la remorque. </li>
+        <li>Il vérifie la présence et l'état :
+          <br>- des plaques du véhicule tracteur et de la remorque (tare et immatriculation) ;
+          <br>- des disques de limitation de vitesses de la remorque ;
+          <br>- des dispositifs réfléchissants (catadioptres) arrières et latéraux de l’ensemble et du dispositif complémentaire de signalisation arrière pour la remorque ;
+          <br>- le cas échéant, des dispositifs latéraux de protection et anti-encastrement arrière.</li> 
+      </ul>
+    </div>
+  </div>
+  <div class="theme" onclick="toggleFiche(this)">
+    <h3>Thème 6 – Transport de marchandises</h3>
+    <div class="fiche-content">
+      <ul class="liste">
+        <li>Pour la remorque ou semi-remorque, le candidat :
+          <br>- contrôle l’ouverture de l’accès au compartiment marchandises en ouvrant les portes, le hayon, le rideau ou la bâche. En présence de portes, le candidat doit les fixer en position ouverte à l’aide des dispositifs prévus.
+          <br>- contrôle l’état et l’étanchéité du compartiment marchandises, en montant dans le compartiment si nécessaire.
+          <br>- annonce le poids et la nature du chargement, vérifie sa répartition et son arrimage.
+          <br>- ferme l'accès au compartiment marchandises et s'assure qu'il est correctement fermé.</li>
+      </ul>
+    </div>
+   </div>
+  </div>
+
+  <!-- Socle 1 -->
+    <div id="socle1" class="tab-content">
+      <div class="section">
+        <h2 class="theme-titre">Socle 1</h2>
+      </div>
+      <div class="section">
+        <h3>1 - Contrôle de l’immobilisation</h3>
+        <ul>
+          <li>Le candidat s’assure, au besoin en mettant le contact, que le véhicule est bien immobilisé (position de la commande et / ou voyant allumé).</li>
+        </ul>
+      </div>
+           <div class="section">
+        <h3>2 - Vérification des documents de bord</h3>
+        <ul>
+          <li>Le candidat s’assure de la présence des porte-documents contenant les pièces obligatoires pour le véhicule tracteur et la remorque. </li>
+        </ul>
+      </div>
+           <div class="section">
+      <h3>3 - Vérifications générales</h3>
+        <ul>
+          <li>Pour les véhicules équipés d’une cabine basculante, le candidat s’assure du bon verrouillageau moyen du témoin situé au tableau de bord (voyant éteint) ou de tout autre moyen prévu parle constructeur.</li>
+          <li>Ces 3 phases sont regroupées pour l’évaluation.</li>
+        </ul>
+      </div>
+           <div class="section">
+      <h3>4 - Contrôles du véhicule tracteur</h3>
+        <ul>
+          <li>État général de la carrosserie et du vitrage : le candidat s’assure de l’absence d’anomalie concernant la carrosserie, la caisse, la cabine, ou la bâche et le vitrage pour la face avant, les cotés, l’arrière du véhicule. Pour la vérification du vitrage, les glaces des rétroviseurs sont à prendre en compte.</li>
+          <li>Roues : le candidat s’assure de l’absence d’anomalie relative aux roues du véhicule.</li>
+          <li>Taches : le candidat vérifie sous l’ensemble du véhicule l’absence de tache.</li>
+          <li>Chargement : Camion-remorque : le candidat s’assure de l’absence d’anomalie liée au chargement en ouvrant une porte, le hayon, le rideau ou la bâche donnant accès au compartiment destiné aux marchandises.</li>
+        </ul>
+      </div>
+           <div class="section">
+      <h3>5 - Contrôles remorque</h3>
+        <ul>
+          <li>État général de la caisse : le candidat s’assure de l’absence d’anomalie extérieure concernant la caisse ou la bâche de la remorque pour la face avant, les cotés, l’arrière.</li>
+            <li>Roues : le candidat s’assure de l’absence d’anomalie relative aux roues de la remorque.</li>
+            <li>Chargement : le candidat s’assure de l’absence d’anomalie liée au chargement en ouvrant une porte, le hayon, le rideau ou la bâche donnant accès au compartiment destiné aux marchandises.</li>
+        </ul>
+      </div>
+                 <div class="section">
+      <h3>6 - Mise en marche du moteur</h3>
+        <ul>
+          <li>Le candidat met le moteur en marche. Il annonce les voyants restés allumés et signale immédiatement toute anomalie. Il règle au besoin son siège, son volant, ses rétroviseurs.</li>
+        </ul>
+      </div>
+                 <div class="section">
+      <h3>7 - Positionnement du véhicule tracteur</h3>
+        <ul>
+          <li>Le candidat positionne son véhicule dans l’alignement de la remorque.</li>
+          <li>CE camion-remorque : le candidat relève la barre anti-encastrement (celle-ci peut être relevée, par le candidat, avant de positionner le véhicule tracteur). Il positionne le porteur dans l’alignement de la remorque et l’immobilise avant que l’arrière ne s’engage au dessus de l’extrémité de la flèche de la remorque. Il vérifie l’ouverture et le positionnement du crochet d’attelage par rapport à l’axe de la flèche.</li>
+            <li>CE semi-remorque : le candidat positionne le tracteur dans l’alignement de la semi-remorque et l’immobilise avant que l’arrière ne s’engage sous la semi. Il vérifie la hauteur et l’inclinaison de la sellette du tracteur, son graissage et l’ouverture du verrou coupleur.</li> 
+            <li>Pour toutes les catégories, le candidat veille à conserver une distance suffisante lui permettant de circuler aisément entre la remorque et l’extrémité arrière du tracteur. </li>
+            <li>Le candidat modifie éventuellement la hauteur de suspension. </li>
+        </ul>
+      </div>
+                 <div class="section">
+      <h3>8 - Compatibilité</h3>
+        <ul>
+          <li>Le candidat vérifie la compatibilité :
+            <br>• des systèmes d’attelage ;
+            <br>• des connexions électriques ;
+            <br>• des connexions pneumatiques ;
+            <br>• des distances ;
+            <br>• des poids.</li>
+            <li>Compatibilité des poids :</li>
+            <li>Camion-remorque le candidat vérifie, en annonçant les chiffres :
+              <br>• que le PTAC / MCMA de la remorque et du véhicule tracteur sont respectés ;
+              <br>• que la somme du poids réel de la remorque et du véhicule tracteur est bien inférieure ou égale au poids maximal autorisé / masse maximale autorisée de l’ensemble (MMA).</li>
+              <li>NB : la MMA est égale à la plus petite des deux valeurs entre :
+                <br>• PTRA / MCMA de l’ensemble, en fonction du nombre d’essieux
+                <br>et
+                <br>• somme des PTAC / MCMA.</li>
+            <li>Véhicule articulé : le candidat vérifie, en donnant les chiffres :
+              <br>• que le PTAC / MCMA de la semi-remorque est respecté ;
+              <br>• que la somme du poids réel de la semi-remorque et du poids à vide du tracteur est bien inférieure ou égale au poids maximal autorisé / masse maximale autorisée de l’ensemble (MMA).</li>
+              <li>NB : la MMA, pour un véhicule articulé, correspond à la plus petite des deux valeurs entre :
+                <br>• PTRA / MCMA de l’ensemble, en fonction du nombre d’essieux
+                <br>et
+                <br>• PV du tracteur + PTAC/MCMA de la semi-remorque.</li>
+                <li>Pour la compatibilité des distances :
+                <br>• CE camion remorque : le candidat vérifie que la distance comprise entre l’extrémité de la flèche d’attelage et le tablier de la remorque est supérieure à la diagonale comprise entre l’axe du crochet d’attelage et l’angle arrière de la caisse du porteur.</li>
+                <br>• CE semi-remorque : le candidat vérifie que la distance comprise entre le pivot d’attelage et l’arrière de la cabine du tracteur est supérieure à la diagonale comprise entre la cheville ouvrière et l’angle du tablier de la semi-remorque. De même, il vérifie que la diagonale comprise entre la cheville ouvrière et les béquilles est supérieure à celle comprise entre le pivot d’attelage et l’angle arrière du tracteur.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Attelage -->
+    <div id="attelage" class="tab-content">
+      <div class="section">
+        <h2 class="theme-titre">Attelage</h2>
+      </div>
+      <div class="section">
+        <h3>9 - Attelage</h3>
+        <ul>
+          <li>L’attelage doit comprendre impérativement les opérations indiquées ci-après.
+            <br>• Le candidat procède à l’accouplement et à l’essai de traction. Concernant les ensembles constitués d’un véhicule tracteur et d’une semi-remorque, le nombre d’essais pour réussir l’accouplement est limité à 4. Si l’objectif n’est pas atteint au terme de ces essais, la notation éliminatoire est appliquée et l’examen est interrompu.
+            <br>• Il immobilise son véhicule et arrête son moteur.
+            <br>• Il s’assure du bon verrouillage du système d’attelage (position de la poignée ou de la cheville ou du témoin).
+            <br>• Il branche ses divers flexibles (pneumatiques/électriques suivant l’équipement de l’ensemble de véhicules).
+            <br>• Il remet en place la ou les béquilles.
+            <br>• Il supprime les dispositifs d’immobilisation.
+            <br>• Suivant l’équipement du véhicule tracteur, le candidat remet en position « route » la suspension.</li>
+            <li>Éliminatoire : essai de traction erroné ou non réalisé et non vérification du verrouillage impossibilité d’accoupler par mauvaise manipulation du candidat (en cas d’avarie du matériel, le candidat est excusé).</li>
+            <li>Intervention de sécurité.
+              <br>A l’occasion de l’attelage, l’expert peut être amené à intervenir pour préserver le matériel, dans le cas, par exemple, d’une :
+              <br>• hauteur de sellette inférieure à celle de la cheville ouvrière (semi-remorque) ;
+              <br>• hauteur de la sellette supérieure à l’angle bas de la remorque (semi-remorque) ;
+              <br>• hauteur du crochet d’attelage supérieure à la hauteur de la flèche de la remorque (camion-remorque) ;
+              <br>• hauteur du crochet d’attelage inférieure à la hauteur de la flèche de la remorque (camion-remorque).</li>
+            <li>En cas d’intervention de l’expert, l’examen est interrompu et le candidat ajourné</li>
+        </ul>
+    </div>
+  </div>
+
+<!-- Socle 2 -->
+    <div id="socle2" class="tab-content">
+      <div class="section">
+        <h2 class="theme-titre">Socle 2</h2>
+      </div>
+      <div class="section">
+        <h3>10 - Annonce dimensions et poids</h3>
+        <ul>
+          <li>Le candidat annonce les longueur / largeur / hauteur / PTRA/MCMA de l’ensemble attelé. </li>
+        </ul>
+      </div>
+           <div class="section">
+        <h3>11 - Feux</h3>
+        <ul>
+          <li>Le candidat vérifie l’absence d’anomalie sur les feux stop, de détresse, croisement, gabarit.</li>
+            <li>Les feux arrière du véhicule tracteur ne sont pas à prendre en compte pour ces vérifications.</li>
+            <li>Pour la vérification des feux stop, le candidat peut demander l’assistance de l’expert.</li>
+            <li>Pour la vérification des feux de détresse, les répétiteurs latéraux sont à prendre en compte.</li>
+            <li>Pour la vérification des feux de croisement, les feux de position latéraux de l’ensemble et les feux rouges arrière de la remorque sont à prendre en compte.</li>
+          <li>Si le véhicule en est équipé, le candidat peut utiliser la fonction « autotest » des feux.</li>
+        </ul>
+      </div>
+    </div>
+
+<!-- Socle 3 -->
+    <div id="socle3" class="tab-content">
+      <div class="section">
+        <h2 class="theme-titre">Socle 3</h2>
+      </div>
+      <div class="section">
+        <h3>14 - Vérification des systèmes de freinage.</h3>
+        <ul>
+          <li>1- Mise en pression à l’intérieur des réservoirs d’air : le candidat s’assure que la pression est suffisante, à l’aide du manomètre et / ou voyants).</li>
+          <li>2- Essai pratique du frein de parc : le candidat amorce un démarrage permettant de tester la retenue du frein de parc, l’ôte, constate l’évolution de la pression (voyant et/ou manomètre). </li>
+          <li>3- Essai pratique du frein de service : le candidat engage un rapport de vitesse et avance significativement. Il freine et, pied sur la pédale, constate l’évolution de la pression (voyant et/ou manomètre). </li>
+          <li>4- Le candidat annonce la fin des essais des systèmes de freinage. </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dételage -->
+    <div id="detelage" class="tab-content">
+      <div class="section">
+        <h2 class="theme-titre">Dételage</h2>
+      </div>
+      <div class="section">
+        <h3>15 - Dételage</h3>
+        <ul>
+          <li>Le dételage doit comprendre impérativement les opérations indiquées ci-après.
+            <br>• Moteur arrêté, le candidat s’assure de l’immobilisation du véhicule (position de la commande ou voyant). Le frein de parc est serré.
+            <br>• Il commente la stabilité du sol.
+            <br>• Le candidat immobilise la remorque ou la semi-remorque ( frein de remorque et place une cale en fonction de l’éventuelle pente : en général, sur l’avant de l’essieu le plus chargé, à l’arrière de l’essieu situé à l’extrémité arrière en cas de pente pouvant engendrer un recul).
+            <br>• Le candidat la stabilise avec la ou les béquilles, au besoin en s’aidant de la suspension pneumatique.
+            <br>• Le candidat débranche les flexibles (freins, électriques).
+            <br>• Il déverrouille le système d’attelage.
+            <br>• Le candidat démarre le véhicule, s’assure que la pression est suffisante.</li>
+          <li>Si CE semi-remorque : 
+            <br>• avancement à mi-sellette
+            <br>ou
+            <br>• après dégagement de la cheville ouvrière baisse de la suspension pneumatique jusqu’au décollement de la sellette d’attelage ;
+            <br>• il s’assure de la stabilité de la semi-remorque.</li>
+          <li>
+            <br>• Il dégage le véhicule tracteur.
+            <br>• Il remet la suspension en position « route » le cas échéant.
+            <br>• Il replace le véhicule tracteur dans sa position initiale.
+            <br>• Il l’immobilise.
+            <br>• Il remet la barre anti-encastrement en place (camion-remorque, si l’équipement le permet).</li>
+          <li>Intervention de sécurité.
+            <br>A l’occasion du dételage, l’expert peut être amené à intervenir pour préserver le matériel, dans le cas, par exemple :
+            <br>• d’une absence de stabilisation de la remorque ou semi-remorque avant ouverture du verrou coupleur ou du crochet.
+            <br>• de flexible(s) branché(s) avant avancement du véhicule tracteur.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fiches Orales -->
+    <div id="ficheoral" class="tab-content">
+      <div class="section"><h2 class="theme-titre">12 Fiches Oral</h2></div>
+      <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 1 - Conduite dans des conditions atmosphériques difficiles, route de nuit</h3>
+        <div class="fiche-content">
+          <strong>Conduite et comportement</strong>
+          <strong><br>Pluie :</strong>
+          <br>Réduire la vitesse et respecter la réglementation spécifique, augmenter les distances de sécurité, éviter les freinages brusques, utiliser au maximum le frein moteur, allumer les feux sauf le(s) brouillard arrière(s), utiliser les accessoires (ventilation / climatisation, dégivrage des rétroviseurs …).<br>
+          <strong><br>Brouillard :</strong>
+          <br>Réduire la vitesse et respecter la réglementation spécifique, respecter les distances de sécurité, allumer les feux de croisement ou de brouillard, se guider à l'aide du marquage au sol.<br>
+          <strong><br>Vent :</strong>
+          <br>Réduire la vitesse, prévoir et éviter les écarts de direction surtout lorsque des zones abritées et des zones exposées se succèdent (ponts, bâtiments, croisements et dépassements ...) et que son véhicule circule à vide.<br>
+          <strong><br>Neige et verglas :</strong>
+          <br>Réduire la vitesse, augmenter la distance de sécurité, utiliser les équipements autorisés, utiliser les commandes avec souplesse, respecter la réglementation (barrières de dégel). Allumer les feux.<br>
+          <strong><br>Nuit :</strong>
+          <br>Les accidents sont 2 fois plus graves que le jour. Ils sont la conséquence d'une vitesse supérieure, du manque de visibilité, de la fatigue et de l’absorption d'alcool. Ceux qui ont une mauvaise acuité visuelle auront d'autant plus de problèmes qu'ils conduiront la nuit. 
+          <br>Par ailleurs, la sensibilisation à l'éblouissement, qui sera d'autant plus importante que le sujet aura un problème visuel :
+          <br>• altère la vision des couleurs,
+          <br>• réduit le champ visuel,
+          <br>• diminue l'acuité de façon importante.
+          <br>Sans oublier l'influence de la fatigue.<br>
+          <strong><br>Précautions à prendre :</strong>
+          <strong><br>Avant le départ :</strong>
+          <br>• contrôler le bon état, la propreté, le réglage, le bon fonctionnement des feux ;
+          <br>• contrôler la charge de la batterie ;
+          <br>• s'assurer qu'on a une boîte d'ampoules de rechange, des fusibles, une lampe de poche.<br>
+          <strong><br>Pendant le trajet :</strong>
+          <br>• faire des pauses plus fréquentes ;
+          <br>• adapter son allure aux conditions météo, à la visibilité et aux conditions d’adhérence ;
+          <br>• de nuit, ralentir davantage en virage car l’importance de la courbe est plus difficile à apprécier et la perception des obstacles plus tardive ;
+          <br>• de nuit, en cas d'éblouissement, fixer le bord droit de la route le plus loin possible ;
+          <br>• en cas de mauvaise visibilité, se guider à l’aide des marquages au sol ;
+          <br>• se méfier du "coup de pompe" au petit matin.<br>
+          <strong><br>Informations routières :</strong>
+          <br>Internet, CRIR, CNIR, Police, Gendarmerie, Autoroute info, Radios, etc... 24 h/24h.
+        </div>
+      </div>
+      <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 2 - Comportement en cas d’accident</h3>
+        <div class="fiche-content"
+        <br>En présence d’un accident corporel, lorsqu’on est arrivé le premier ou que l’on est témoin de l’accident, porter le gilet de haute visibilité et appliquer les gestes d’urgence dans l’attente des secours.<br>
+        <br><strong>Gestes d'urgence :</strong>
+        <br>• PROTEGER
+        <br>• ALERTER
+        <br>• SECOURIR<br>
+        <strong><br>Protéger :</strong> Signaler l'accident aux autres usagers pour éviter un sur-accident (utilisation du ou des triangles de présignalisation, feux de détresse ...). De nuit essayer d'éclairer l'accident.<br>
+        <strong><br>Alerter :</strong> Police ou Gendarmerie, pompiers, borne d’appel sur l’autoroute, lorsqu'on arrive le premier le plus rapidement en précisant le lieu, la gravité apparente, le nombre de blessés ... Sinon passer avec prudence pour ne pas encombrer inutilement les lieux.
+        <br>Numéros utiles : SAMU (15), police ou gendarmerie (17), pompiers (18), 112 pour l’appel unique européen.<br>
+        <strong><br>Secourir :</strong> couvrir les blessés, leur parler mais ne pas intervenir sans compétences spécialisées.<br>
+        <strong><br>Gestes dangereux :</strong>
+        <br>• Donner à boire à un blessé.
+        <br>• Effectuer des gestes non maîtrisés.
+        <br>• Déplacer un blessé, enlever son casque à un motard (sauf nécessité immédiate : incendie, noyade ...).<br>
+        <strong><br>Conduite à tenir :</strong>
+        <br>En cas d’accident matériel, garder son calme et sa courtoisie quelle que soit la gravité de l’accident. 
+        <br>Compte tenu de l’encombrement d’un véhicule lourd, dégager les lieux dès que possible. 
+        <br>En cas d’impossibilité (véhicule hors service), protéger les lieux. 
+        <br>Prévenir son entreprise et procéder à la rédaction d’un constat amiable. 
+        <br>La détention et l’utilisation d’un constat amiable ne sont pas obligatoires mais elles sont fortement recommandées. 
+        <br>Le constat amiable est de format européen et peut être utilisé dans tous les pays de l’Union. 
+        <br>Les rubriques sont ainsi identiques, seules les langues des pays changent. 
+        <br>La rédaction du recto se fait en présence de la partie adverse (identités et coordonnées des conducteurs, de leurs compagnies d’assurances, date, heure et lieu du sinistre, dégâts apparents, circonstances, croquis, etc.). 
+        <br>Un total des croix est fait, les deux parties signent le constat avant de séparer les deux exemplaires (autocarbonnés). 
+        <br>Il n’est alors plus possible de modifier le recto. Le verso est individuellement complété avant envoi à l’assureur (5 jours ouvrés en cas d’accident matériel).</div>
+      </div>
+      <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 3 - Conduite en montagne ou zones accidentées</h3>
+        <div class="fiche-content">
+        <strong><br>Dangers :</strong>
+        <br>Les risques de la conduite en montagne ou zones accidentées peuvent être liés à l’infrastructure routière, à la nature des véhicules / ensemble de véhicules, à la météorologie :
+        <br>• La déclivité : risques liés à l'énergie cinétique, augmentation de la vitesse qui peut en résulter ...
+        <br>• Les croisements : délicats selon l’infrastructure et le véhicule ou ensemble de véhicules concerné (largeur de la voie par exemple), les usagers croisés (surprise, méconnaissance des règles du code de la route …)
+        <br>• Les trajectoires en virages.
+        <br>• Les autres usagers (véhicules légers et lourds, véhicules spéciaux de déneigement ...).
+        <br>• Risque d'échauffement important des systèmes de freinage si mauvaise utilisation du ralentisseur, frein moteur, système de freinage ...
+        <br>• Surchauffe moteur lors des montées.
+        <br>• Risques liés à la neige, au brouillard ou au verglas.
+        <br>• Masse du véhicule importante, nature du chargement ...<br>
+        <strong><br>Précautions :</strong>
+        <br>La conduite d’un véhicule lourd requiert une attention toute particulière.
+        <br>• Réduire et adapter sa vitesse à la déclivité.
+        <br>• Adapter les rapports de boîte de vitesses en fonction de la déclivité (frein moteur), savoir utiliser les possibilités d’une transmission avec changement de vitesses automatique …
+        <br>• Utiliser correctement les freins et ralentisseurs, savoir utiliser les possibilités techniques de ralentisseurs / freins combinés ...
+        <br>• Posséder les dispositifs antidérapants adaptés (chaînes, pneus à crampons) selon la réglementation et les prévisions.
+        <br>• S'informer de l'état des routes, et de l'ouverture ou de la fermeture de certains itinéraires (cols ...).
+        <br>• Préférer, selon les possibilités, les tunnels routiers aux passages des cols.
+        <br>• Prévenir (avertisseur sonore, appels feux).</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 4 - Gestes et postures – Accident du travail</h3>
+        <div class="fiche-content">
+          <strong><br>Gestes et postures à adopter :</strong>
+          <br>• Etre attentif lors de la montée et la descente de la cabine: risque de chute, foulure, entorse, fractures …
+          <br>• Véhicule avec cabine : ne pas sauter de la cabine, conserver les trois points d’appui, descendre face aux marchepieds, être attentif aux marchepieds glissants …
+          <br>• Adopter les principes recommandés lors des chargements/déchargements de smarchandises (dos droit, placement des pieds de part et d’autre pour l’équilibre, flexion/extension des jambes …) ;
+          <br>• Etre vigilant lors du nettoyage du véhicule (utilisation des marchepieds et poignée pour le pare-brise, risque de glissade avec le sol mouillé sur les aires de lavage …) ;
+          <br>• Utiliser les équipements et protections prévues selon les cas (gants, chaussures de sécurité, imperméable …) ;
+          <br>• Adopter une bonne position de conduite (utilisation des différentes possibilités de réglage du siège, utilisation obligatoire de la ceinture de sécurité …) ;<br>
+          <strong><br>Importance des accidents :</strong>
+          <br>• Les accidents du travail peuvent survenir à l’arrêt mais également en circulation :
+          <br>• L’accident du travail survient par le fait ou à l’occasion du travail, à toute personne salariée ou travaillant à quelque titre ou en quelque lieu que ce soient pour un ou plusieurs employeurs.
+          <br>• Un accident pendant le trajet aller ou retour entre la résidence et le lieu de travail d’un travailleur est considéré comme accident du travail si ce sinistre survient sur l’itinéraire et pendant le délai habituel du parcours ;<br>
+          <strong><br>Quelques chiffres :</strong>
+          <strong><br>Accident du travail en 2020:</strong>
+          <br>• Transport routier de marchandises : plus de 250 000 salariés, près de 25 000 accidents du travail, 53 décès ;
+          <strong><br>Accident de la route :</strong>
+          <br>• Transport routier de marchandises : 33 tués, 541 blessés.
+          <strong><br>Dangers et risques :</strong>
+          <strong><br>Accidents du travail :</strong>
+          <br>•avoir à l’esprit qu’il y a 13 fois plus d’accident du travail à l’arrêt qu'en circulation.
+          <strong><br>Connaître les risques liés :</strong>
+          <br>• aux manutentions (hernies, ankylose, écrasement… lors du chargement et déchargement, bâchages, débâchages) ;
+          <br>• aux matières transportées (brûlures, respiration de vapeurs toxiques lors du transport ou transvasement de liquides chauds, toxiques, dangereux ...) ;
+          <br>• à la conception des véhicules (chute, membre coincé, blessures… liés à une cabine trop haute, un accès difficile aux organes mécaniques, lors de l’utilisation du dispositifs d'attelage ...) ;
+          <br>• à la manœuvre des hayons élévateurs (chute, écrasement, blessure …) ;
+          <br>• à la conduite de groupes frigorifiques (produits suspendus), citernes (mouvement de ballant) ;
+          <br>• à la manœuvres des cabines basculantes (écrasement, membre coincé …).</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 5 - Chargement – Surcharge</h3>
+        <div class="fiche-content"><strong>Chargement </strong>
+          <br>Le chargement est de la responsabilité du conducteur.<br>
+          <strong><br>Précautions :</strong>
+          <br>• Respecter la réglementation relative aux masses maximales pour éviter la surcharge.
+          <br>• Equilibrer, répartir et éventuellement arrimer le chargement.
+          <br>• Organiser correctement le chargement en fonction de l'itinéraire et, dans le cas de livraisons multiples, des déchargements successifs.
+          <br>• Adapter sa vitesse.
+          <br>• Choisir son itinéraire en fonction du gabarit (hauteur et largeur) et des masses (limitations de tonnage) de son véhicule ou ensemble de véhicules.<br>
+          <strong><br>Risques liés à un chargement défectueux :</strong>
+          <br>• Déséquilibre du véhicule.
+          <br>• Risque de renversement.
+          <br>• Détérioration du véhicule.
+          <br>• Risque d’endommagement de la voirie, des ouvrages d’art …
+          <br>• Risque d'obstruction de la visibilité.
+          <br>• Risque de chute de la marchandise sur la chaussée.
+          <br>• Risque de limitation ou de refus de garantie de la part des assureurs en cas d'accident.<br>
+          <strong><br>Surcharge</strong>
+          <br>Respect de la réglementation : Surcharge interdite.
+          <br>La masse réelle ne doit jamais dépasser la masse en charge maximale admissible (PTAC ou PTRA selon qu’il s’agisse d’un véhicule isolé ou d’un ensemble de véhicules).
+          <strong><br>Les masses sont inscrites sur :</strong>
+          <br>• les certificats d’immatriculation (code F2 pour le PTAC, F3 pour le PTRA) ;
+          <br>Et, selon le cas :
+          <br>• sur la plaque de tare et de surface ;
+          <br>• sur la plaque du constructeur ;
+          <br>• sur le dispositif d’attelage.
+          <br>La réalité du transport : cette réglementation n'est pas toujours respectée (nécessité de rendement, difficultés à contrôler certains chargements : vrac ...).<br>
+          <strong><br>Sanctions</strong>
+          <br>La surcharge constitue une infraction :
+          <br>• à la réglementation des transports (coordination).
+          <br>• au code de la route.
+          <strong><br>Sanctions encourues :</strong>
+          <br>• amende (4ème classe, 90 € en forfaitaire minorée, 135 € en forfaitaire, 375 € en forfaitaire majorée) ;
+          <br>• prison ;
+          <br>• immobilisation du véhicule (au-delà de 5 % de surcharge).</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 6 - Le dépassement</h3>
+        <div class="fiche-content">Les dépassements avec un véhicule du groupe lourd ou d’un ensemble de véhicules nécessite une grande attention, conséquence de gabarits imposants (poids et dimensions).<br>
+          <strong><br>Précautions avant le dépassement</strong>
+          <br>• Respect de la signalisation horizontale et verticale.
+          <br>• Respect de la réglementation (interdiction de dépassement sur la troisième voie pour les véhicules d’un poids total autorisé en charge supérieur à 3.5 tonnes ou d’ensemble d’une longueur supérieure à 7 mètres, interdiction de dépassement lorsqu’au moins une voie de circulation est couverte de neige …).
+          <br>• Importance de l'espace libre nécessaire.
+          <br>• Importance de la différence d'allure avec le véhicule dépassé.
+          <br>• Accélérations rendues difficiles par l'inertie du véhicule.
+          <br>• Nécessité de connaître son véhicule (possibilité d’accélération, utilisation du limiteur/régulateur de vitesse ...).
+          <br>• Utiliser les avertisseurs (sonores et lumineux).<br>
+          <strong><br>Précautions pendant le dépassement</strong>
+          <br>• Respecter des distances latérales et longitudinales, existence de règles prévues par le code de la route (notamment avec les deux-roues ou les piétons) …
+          <br>• Surveillance à l’aide des dispositifs de rétrovision.
+          <strong><br>Précautions après le dépassement</strong>
+          <br>• Respecter les distances lors du retour à droite (distances de sécurité [règle du code de la route spécifique - R.412-12 - imposant une distance minimale de 50 mètres pour les PTAC > 3 500 kilos ou dont la longueur > 7 mètres]).
+          <br>• Se rabattre à droite.<br>
+          <strong><br>Dangers liés aux dépassements</strong>
+          <br>• Accrochage de l'usager dépassé à cause d’une mauvaise appréciation des distances.
+          <br>• Mauvaise appréciation des vitesses.
+          <br>• Déport dû au vent (passage d'une zone abritée à une zone non abritée).<br>
+          <strong><br>Etre dépassé</strong>
+          <br>• Maintenir son allure (ou éventuellement ralentir), rappel des règles du code de la route ...
+          <br>• Surveiller un déport éventuel dû au vent.<br>
+          <strong><br>Les dispositifs latéraux et arrière de protection</strong>
+          <br>• Dispositifs latéraux :
+          <br>o Objectif : protéger contre le risque de chute d'usagers (deux roues principalement) sur la trajectoire des roues arrière du véhicule, de la remorque ou de l’ensemble de véhicules.
+          <br>• Dispositifs arrière anti-encastrement :
+          <br>o Objectif : protéger contre le risque d'encastrement sous le véhicule d'usagers venant de l'arrière.</div>
+        </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 7 - Dynamique du véhicule</h3>
+        <div class="fiche-content"><strong><br>Vitesse</strong>
+          <br>• Un véhicule en mouvement accumule une énergie : c’est l'énergie cinétique.
+          <br>• C’est l’énergie qui animait le ou les véhicules juste avant le choc.
+          <br>• Après le choc, véhicule(s) immobilisé(s), l’énergie cinétique est tombée à zéro, car elle a été « consommée » en déformations mécaniques très brutales. Elle est proportionnelle :
+          <br>o la masse du véhicule,
+          <br>o au carré de la vitesse.
+          <br>• La vitesse à un impact direct sur la gravité des sinistres. En 2020 la vitesse a entraîner la morts de 33 personnes en véhicules lourds, 14% des accidents mortels entre poids lourd et autre véhicule.<br>
+          <strong><br>Centre de gravité</strong>
+          <br>• Il est déterminé par construction.
+          <br>• Il doit se situer le plus bas possible.
+          <br>• Il varie en fonction du chargement (un chargement en hauteur rehausse le centre de gravité).
+          <br>• Il peut influencer la conduite en créant des effets de ballant (différents type de ballants, élargissement des trajectoires, risque de renversement …).<br>
+         <strong><br>Force centrifuge</strong>
+         <br>• C'est la force qui, dans un virage ou un changement de direction, entraîne le véhicule vers l'extérieur de la courbe.
+         <br>• Elle varie : avec le carré de la vitesse, la masse du véhicule et le rayon de la courbe.
+         <br>• Elle tend à élargir la trajectoire du véhicule en virage ou lors de changement de direction, ce qui peut surprendre le conducteur.<br>
+         <strong><br>Adaptation de la conduite</strong>
+         <br>• Réduire la vitesse du véhicule en fonction du chargement et de la configuration de la route (rayon de la trajectoire).
+         <br>• Adopter une conduite souple.
+         <br>• Adapter la vitesse du véhicule aux circonstances rencontrées : (signalisation, situations de circulation, état de la route, conditions de visibilité, d'éclairage ...).
+         <br>• Connaître la réglementation spécifique des véhicules du groupe lourd en matière de limitations de vitesses, (en fonction des catégories, du type de voie, apposition de disques de limitation à l'arrière des véhicules lourds, des remorques …).
+         <br>• Savoir que les véhicules du groupe lourd (hors BE) sont prévus, à la construction, pour ne pas dépasser une certaine vitesse (limiteur, dispositif non réglable et non modifiable …).
+         <br>• Savoir charger son véhicule et sa remorque le cas échéant (répartition, équilibre, arrimage …).<br>
+         <strong><br>Spécifiques CE : conduite d’un tracteur routier en solo</strong>
+         <strong><br>Particularités :</strong>
+         <br>• Confort réduit ;
+         <br>• freinage réduit (mauvaise adhérence des roues AR, absence de charge) ;
+         <br>• comportement routier dégradé.<br>
+         <strong><br>Dangers :</strong>
+         <br>• instabilité.<br>
+         <strong><br>Précautions :</strong>
+         <br>• respecter la limitation de vitesse prévue par la réglementation et rappelée sur les disques apposés sur le véhicule tracteur ;
+         <br>• Conduite souple au volant et sur les commandes (embrayage, freins, ralentisseur, sélecteur de rapport de vitesses).</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 8 - Alcool, stupéfiants, médicaments</h3>
+        <div class="fiche-content"><strong>Alcool</strong>
+          <br>Le taux d’alcool limite à ne pas atteindre est de 0,5 g d’alcool par litre de sang soit 0,25 mg d’alcool par litre d’air expiré.
+          <br>Chaque verre (norme débit de boisson) consommé fait monter le taux d’alcool de 0,20 g à 0,25 g en moyenne. Ce taux peut augmenter en fonction de l’état de santé, du degré de fatigue, du stress ou des caractéristiques physiques de la personne.
+          <br>Le taux d’alcool maximal est atteint :
+          <br>• ½ heure après absorption à jeun ;
+          <br>• 1 heure après absorption au cours d’un repas.
+          <br>L’alcoolémie baisse en moyenne de 0,10 g à 0,15 g d’alcool par litre de sang en 1 heure.
+          <br>Café salé, cuillerée d’huile ... : aucun "truc" ne permet d’éliminer l’alcool plus rapidement.<br>
+          <strong><br>Effets</strong>
+          <br>L'alcool agit sur le cerveau et sur tout le système nerveux, ce qui provoque des conséquences graves pour le conducteur.
+          <br>Les conditions physiques sont amoindries :
+          <br>• champ visuel réduit, vision trouble, inattention, sommeil ;
+          <br>• perte de mémoire, perte des apprentissages , diminution des réflexes.
+          <br>Le comportement est modifié :
+          <br>• diminution de la peur et prise de risque exagérée ;
+          <br>• agressivité ;
+          <br>• euphorie.<br>
+          <strong><br>Sanctions</strong>
+          <br>Taux compris entre 0,5 et 0,8 g d’alcool par litre de sang:
+          <br>• amende de 135 euros et retrait de 6 points sur le permis de conduire.
+          <br>Taux égal ou supérieur à 0,8 g d’alcool par litre de sang (délit) :
+          <br>• retrait de 6 points sur le permis de conduire ;
+          <br>• amende pouvant aller jusqu’à 4 500 euros ;
+          <br>• immobilisation du véhicule ;
+          <br>• suspension (jusqu’à 3 ans) voire annulation du permis ;
+          <br>• peine de prison (jusqu’à 2 ans).<br>
+          <strong><br>Stupéfiants</strong>
+          <br>Effets :
+          <br>• capacité à contrôler la trajectoire diminuée ;
+          <br>• temps de réaction allongé ;
+          <br>• déficit des mécanismes d’attention et de vigilance ;
+          <br>• fausse sensation de sécurité.
+          <br>L'usage seul du cannabis multiplie le risque moyen d'avoir un accident par 1,8.
+          <br>L'usage combiné du cannabis avec une forte dose d'alcool multiplie ce risque par 29.<br>
+          <strong><br>Sanctions :</strong>
+          <br>Dépistage positif :
+          <br>• retrait de 6 points sur le permis de conduire ;
+          <br>• amende pouvant aller jusqu’à 4 500 euros ;
+          <br>• immobilisation du véhicule ;
+          <br>• suspension (jusqu’à 3 ans) voire annulation du permis ;
+          <br>• peine de prison (jusqu’à 2 ans).
+          <br>Les sanctions sont aggravées lorsque cette infraction est couplée avec un taux d’alcool prohibé : les peines sont portées à 3 ans d’emprisonnement et 9 000 euros d’amende.<br>
+          <strong><br>Médicaments</strong>
+          <br>Avant de conduire, il convient de lire attentivement les notices ou de demander conseil à son médecin.
+          <br>Certains médicaments sont incompatibles avec la consommation d’alcool et entraînent un sur-risque d’accident considérable.</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 9 - Eco-conduite et conduite citoyenne</h3>
+        <div class="fiche-content"><strong>Eco-conduite</strong>
+          <br>Dans la prise de conscience générale d’un environnement dégradé (pollution, coût des carburants et du matériel …), l’éco-conduite trouve toute sa légitimité.
+          <br>L’éco-conduite, ou conduite économique, a pour objectif d’adopter des principes pour une utilisation efficace de l’énergie.<br>
+          <br>Règles de bases :
+          <br>• changer les rapports à bas régime moteur pour les véhicules à boîte de vitesse manuelle, utiliser les différents programmes proposés pour les changements de vitesses automatique ;
+          <br>• utiliser le compte-tours et connaître les caractéristiques de sa motorisation (couple, puissance, régime moteur optimal …) ;
+          <br>• réguler sa vitesse (80 au lieu de 90 par exemple) ;
+          <br>• utiliser l’inertie du véhicule ;
+          <br>• utiliser un régime moteur le plus bas possible ;
+          <br>• anticiper le trafic et conduire avec souplesse ;
+          <br>• entretenir son véhicule.
+          <br>De même, lors des départs à froid, amener progressivement le véhicule à sa température optimale de fonctionnement en utilisant le ou les thermomètres à disposition (liquide de refroidissement, huile) et en évitant de laisser tourner le moteur à l’arrêt.
+          <br>Penser qu’outre le moteur en lui même, les organes comportant des huiles (pont, boite de vitesses …) ont également besoin de monter en température pour un bon fonctionnement.<br>
+          <strong><br>Conduite citoyenne</strong>
+          <br>Bruit
+          <br>Précautions :
+          <br>• maintenir en bon état le dispositif d'échappement silencieux ;
+          <br>• éviter en agglomération des accélérations intempestives ;
+          <br>• arrêter le moteur lorsqu'on stationne, être vigilant sur les lieux de stationnement avec un véhicule équipé d’un groupe frigorifique.
+          <br>Sanctions : amendes, immobilisation, mise en fourrière.
+          <br>Pollution
+          <br>Précautions : pas d’émission, pendant l'arrêt, de fumées nettement teintées ou opaques.
+          <br>Il est toutefois admis des émissions fugitives au moment des changements de régime du moteur.
+          <br>Sanctions : amende, immobilisation, mise en fourrière.<br>
+          <br>Moyens de lutte :
+          <br>La pollution automobile représente un danger important pour la population et l'environnement.
+          <br>L’entrée en application des différentes directives européennes (normes euro) sur les émissions polluantes ont pour conséquence des progrès techniques constants de la part des constructeurs impliquant une diminution de la pollution atmosphérique (motorisations SCR [réduction catalytique sélective] / EGR [recyclage des gaz d’échappement], hybrides et électriques, carburants alternatifs …).
+          <br>Les formations initiales et continues obligatoires des conducteurs de véhicules du groupe lourd ainsi que les formations en entreprises ont également un impact sur les conduites à adopter.
+          <br>Les véhicules lourds sont soumis à des contrôles réglementaires réguliers (contrôles techniques spécifiques).
+          <br>Enfin, sur certains itinéraires, les entreprises peuvent prendre en compte les possibilités de transport combiné rail-route pour limiter les émissions polluantes.</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 10 - Porte-à-faux - Angles morts</h3>
+        <div class="fiche-content"><strong>Porte-à-faux</strong>
+          <br>Le porte-à-faux est la distance existant entre l'axe de la roue avant (ou arrière) et
+          <br>l'extrémité avant (ou arrière) du véhicule.
+          <br>Le conducteur doit connaître les caractéristiques de son véhicule, et notamment les porte-à-faux avant et arrière.
+          <br>Dans le cas d’une semi-remorque, le conducteur doit aussi prendre en compte le porte-à-faux existant entre l’axe de l’attelage et le tablier de la semi.
+          <br>Situations particulières :
+          <br>• Virages accentués
+          <br>• Changements de direction
+          <br>• Manœuvres
+          <br>• Passages étroits<br>
+          <br>Dangers :
+          <br>Risque de renversement des piétons ou des deux roues, d'accrochage des véhicules ou des obstacles.<br>
+          <br>Précautions :
+          <br>Observer vers l'arrière (ou l'avant) de façon à surveiller le balayage des porte-à-faux, notamment au dessus des trottoirs.
+          <br>Le regard vers l'arrière doit se porter à l'opposé de la direction que l'on veut emprunter.
+          <br>Importance primordiale des différents rétroviseurs.
+          <br>Importance des placements et des trajectoires lors des changements de direction ou des manœuvres.<br>
+          <strong><br>Angles morts</strong>
+          <br>Connaissance du véhicule :
+          <br>Les véhicules lourds ayant un gros gabarit, les angles morts sont importants.
+          <br>Les angles morts constituent des zones de non visibilité vers l'arrière et sur les côtés.
+          <br>Le conducteur doit tenir compte de ces particularités.<br>
+          <br>Situations particulières :
+          <br>• Dépassements.
+          <br>• Rabattements.
+          <br>• Changements de direction.
+          <br>• Manœuvres ...<br>
+          <br>Dangers :
+          <br>• Risques de collision à l'arrière ou sur les côtés.
+          <br>• Risques importants liés aux dépassements des deux-roues notamment lors des arrêts en circulation.
+          <br>• Risques accentués dans la conduite des véhicules articulés car les zones de non visibilité sont variables et changeantes.<br>
+          <br>Précautions :
+          <br>En cas de non-visibilité, sur une aire non ouverte à la circulation, le conducteur doit descendre du véhicule et aller vérifier l'espace libre.
+          <br>En général, sur les aires de manœuvres et en circulation, il est prudent de se faire guider.
+          <br>Il existe différents dispositifs de rétrovision pour aider le conducteur selon les véhicules (rétroviseur grand angle, d’accostage, antéviseur, caméra de recul …).</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 11 - Comportement en tunnels et aux passages à niveau</h3>
+        <div class="fiche-content"><strong>Tunnels</strong>
+          <br>Avant de s’engager dans un tunnel, s’assurer de son ouverture et s’informer des interdictions éventuelles (internet, société gestionnaire du tunnel, panneau à message variable …). S’assurer que la quantité de carburant est suffisante (un tunnel comme celui du mont Blanc fait par exemple près de 12 kilomètres) pour franchir l’ouvrage.<br>
+          <br>Conduire en sécurité dans un tunnel :
+          <br>• ne pas fumer durant la traversée, enlever les lunettes de soleil traditionnelles ;
+          <br>• suivre les informations qui sont données par les équipes sur place ;
+          <br>• rester toujours à l’écoute de l’autoradio (107.7 ou radios locales) pour les consignes de sécurité ;
+          <br>• respecter la réglementation en place :
+          <br>les limites de gabarit (hauteur, largeur …), d’accès (produit inflammables, GPL …) ;
+          <br>obligation d’allumer les feux (avant d’entrer dans le tunnel) ;
+          <br>les limitations de vitesse ;
+          <br>les distances de sécurité : il existe une interdistance obligatoire avec, généralement, des balisages lumineux bleus disposés à intervalles réguliers. Un certain nombre de ces balisages doivent séparer le véhicule de celui qui précède ;
+          <br>les feux, barrière d’accès …<br>
+          <br>En cas d’arrêt dans un tunnel :
+          <br>respecter la distance minimale entre deux véhicules, ne pas tenter de faire demi-tour ;
+          <br>lire les informations sur les panneaux à messages variables, écouter la radio, suivre les consignes.<br>
+          <br>En cas d’urgence (panne, incident, etc) :
+          <br>utiliser autant que possible les emplacements d’arrêt prévus, à droite, situés à des intervalles réguliers ; sinon, arrêter le véhicule au plus près du trottoir ;
+          <br>couper le moteur et allumer les feux de détresse ;
+          <br>si possible, avertir le poste de contrôle et de commande à partir des niches de sécurité (SOS).<br>
+          <br>En cas d’incendie :
+          <br>dès détection de fumées ou de flammes, s’arrêter immédiatement. Ne pas tenter de faire demi-tour ou marche arrière ;
+          <br>couper le moteur en laissant la clé de contact en place et allumer les feux de détresse ;
+          <br>regagner rapidement un abri vert signalé par des lampes clignotantes ;
+          <br>penser à aider ceux qui auraient des difficultés ;
+          <br>si possible, avertir le poste de contrôle et de commande à partir des niches de sécurité ;
+          <br>si possible, utiliser les extincteurs ou les lances qui se trouvent à l’intérieur des niches de sécurité elles-mêmes.<br>
+          <strong><br>Passages à niveau</strong>
+          <br>Différents types :
+          <br>• passage à niveau sans barrière : malgré sa rareté, il provoque un taux d'accident très élevé si on le calcule en fonction du nombre de véhicules passant en moyenne chaque jour ;
+          <br>• le passage à niveau avec une barrière complète ou deux demi-barrières de chaque côté de la voie ;
+          <br>• le passage à niveau avec une demi-barrière : forme la plus répandue.
+          <br>Données statistiques :
+          • En France, il y a 15400 passages à niveau ;
+          • Pratiquement tous les accidents qui surviennent lors d'un franchissement de passage à niveau sont dus au non respect du code de la route ;
+          • En 2020 il y a eu 83 collision, 6 bléssés et 15 décès lors du franchissement des passages à niveau.<br>
+          <br>Précautions :
+          <br>Le gabarit des véhicules lourds impose de prendre beaucoup de précautions pour franchir les passages à niveau : inertie liée aux masses, longueur, hauteur, largeur, garde au sol avec certains types de remorques ...
+          <br>L'adaptation de la vitesse de franchissement est délicate : si le conducteur circule vite, il n'est pas sûr de pouvoir s'arrêter à temps en cas d'abaissement des barrières.
+          <br>A l'inverse, si son allure est faible, les barrières risquent de s'abaisser pendant le franchissement (dans ce cas, le conducteur ne doit en aucun cas s’arrêter quitte à casser les barrières).
+          <br>Le conducteur, avant de s'engager, doit s'assurer qu'il dispose d'un espace suffisantpour dégager entièrement le passage à niveau.</div>
+      </div>
+            <div class="theme" onclick="toggleFiche(this)">
+        <h3>Fiche 12 - Systèmes de sécurité et d’aides à la conduite</h3>
+        <div class="fiche-content">Définition :
+          <br>Une aide à la conduite est un système de sécurité active d'information ou d'assistance du conducteur pour :
+          <br>• éviter l'apparition d'une situation dangereuse risquant d'aboutir à l'accident ;
+          <br>• libérer le conducteur d'un certain nombre de tâches qui pourraient atténuer sa vigilance ;
+          <br>• assister le conducteur dans sa perception de l’environnement (détecteur de dépassement, détecteur de risque de gel ...).
+          <br>Tout système allégeant et facilitant la tâche du conducteur peut être considéré comme une aide à la conduite.
+          <br>Cela va donc des systèmes les plus simples et répandus (direction assistée par exemple) aux plus complexes (radar de maintient des distances par exemple).<br>
+          <br>Quelques exemples, leurs rôles :
+          <br>Aide de sécurité :
+          <br>• ABR, antiblocage des roues en cas de freinage brusque / appuyé : le conducteur peut conserver sa trajectoire ;
+          <br>• ESP, stabilisateur électronique programmable : aide au contrôle de trajectoire ;
+          <br>• AFU, aide au freinage d’urgence : permet d’utiliser la puissance maximale du système de freinage ;
+          <br>• limiteur de vitesse ;
+          <br>• radar de distance : permet de conserver automatiquement une distance entre son véhicule et celui qui vous précède
+          <br>• Aide à la navigation par GPS avec avertisseur de zone de travaux, d’embouteillage … ;
+          <br>• Détecteur de fatigue, d'inattention :
+          <br>• Avertisseur de déviation de trajectoire ;
+          <br>• Alerte de franchissement involontaire de ligne.
+          <br>• Automatisation des tâches :
+          <br>• Allumage automatique des feux de croisement ;
+          <br>• Essuie-vitre automatique couplé à un capteur d'eau de pluie ;
+          <br>• Régulateur de vitesse
+          <br>• Aide au démarrage en côte, sur sol glissant (antipatinage) ;
+          <br>• Aide au stationnement :
+          <br>• Radar de détection de distance avant et arrière ;
+          <br>• Caméra de recul
+          <br>Frein de stationnement électrique ;<br>
+          <br>Dangers :
+          <br>Si ces systèmes apportent une efficacité à la conduite normale, ils peuvent aussi être source de risques et contraires à la sécurité si :
+          <br>• le conducteur se repose intégralement sur ces aides : baisse de vigilance, perte des repères, absence d’anticipation, endormissent…
+          <br>• pour certains appareils, l'interface utilisateur (vocale et/ou visuelle) est mal conçue et sollicite trop l'attention du conducteur qui à tendance à occulter ce qu’il se passe réellement sur la route ;
+          <br>• le conducteur procède aux divers réglages en roulant (entrée de données sur l’aide à la navigation par exemple) ;
+          <br>• en cas de défaillance, risque de se laisser surprendre …
+          <br>• tentation d'augmenter sa prise de risques au volant, repousser ses limites …</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Fiches Écrites -->
+  <div id="ficheecrite" class="tab-content">
+  <div class="section">
+    <h2 class="theme-titre">20 Fiches Écrites</h2>
+
+    <!-- Sous-onglets -->
+    <div class="sous-onglets-menu">
+      <a class="sous-onglet actif" href="#fiche1">Fiche 1</a>
+      <a class="sous-onglet" href="#fiche2">Fiche 2</a>
+      <a class="sous-onglet" href="#fiche3">Fiche 3</a>
+      <a class="sous-onglet" href="#fiche4">Fiche 4</a>
+      <a class="sous-onglet" href="#fiche5">Fiche 5</a>
+      <a class="sous-onglet" href="#fiche6">Fiche 6</a>
+      <a class="sous-onglet" href="#fiche7">Fiche 7</a>
+      <a class="sous-onglet" href="#fiche8">Fiche 8</a>
+      <a class="sous-onglet" href="#fiche9">Fiche 9</a>
+      <a class="sous-onglet" href="#fiche10">Fiche 10</a>
+      <a class="sous-onglet" href="#fiche11">Fiche 11</a>
+      <a class="sous-onglet" href="#fiche12">Fiche 12</a>
+      <a class="sous-onglet" href="#fiche13">Fiche 13</a>
+      <a class="sous-onglet" href="#fiche14">Fiche 14</a>
+      <a class="sous-onglet" href="#fiche15">Fiche 15</a>
+      <a class="sous-onglet" href="#fiche16">Fiche 16</a>
+      <a class="sous-onglet" href="#fiche17">Fiche 17</a>
+      <a class="sous-onglet" href="#fiche18">Fiche 18</a>
+      <a class="sous-onglet" href="#fiche19">Fiche 19</a>
+      <a class="sous-onglet" href="#fiche20">Fiche 20</a>
+    </div>
+
+    <!-- Contenus des sous-onglets -->
+<div id="fiche1" class="sous-tab-content active">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Les accidents corporels entre un poids lourd et une voiture sont majoritairement des accidents avec des véhicules circulant dans le même sens. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Le non-respect des limitations de tonnage pour le passage sur les ponts peut-il entraîner une suspension du permis de conduire ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : La rémunération mensuelle d'un conducteur salarié peut être calculée en fonction de la distance parcourue pendant le mois. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 3 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Parmi les types de graissage moteur, il existe le graissage par barbotage. Vrai ou faux ?</h4>
+    <div class="answer">Réponse 4 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Quelle est la périodicité des visites techniques auxquelles sont soumis les véhicules de transport de marchandises de plus de 3,5 t de PTAC ?</h4>
+    <div class="answer">Réponse 5 : 12 mois ou 1 an</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Quel sera le poids maximal d'un ensemble composé de :
+      <br>- Porteur PTRA : 44 t et PTAC : 26 t
+      <br>- Remorque PTAC : 26 t et Poids à Vide : 7t</h4>
+    <div class="answer">Réponse 6 : 44t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : En cas de remorquage occasionnel,
+quelle est la vitesse maximale autorisée?</h4>
+    <div class="answer">Réponse 7 : 25 km/h</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <div class="q-row">
+    <img src="images/fiche-ecrite/panneau-hauteur.png" alt="Limitation hauteur" class="q-img">
+    <h4>Question 8 : Ce signal interdit-il l'accès aux véhicules de plus de 3,50 m ?</h4>
+  </div>
+  <div class="answer">Réponse : Oui</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous rentrez chez vous le soir avec le camion de l'entreprise. Le matin, le temps de conduite pour vous rendre au dépôt est-il compté comme du temps de conduite ?</h4>
+    <div class="answer">Réponse 9 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Comment appelle-t-on le dispositif qui assure le freinage pratiquement simultané de tous les véhicules d'un ensemble ?</h4>
+    <div class="answer">Réponse 10 : Le frein continu ou Le frein principal ou Le frein de service</div>
+  </div>
+</div>
+<div id="fiche2" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Un chiffre doublé (ex: 33) dans le rectangle du haut de la plaque orange placée à l'arrière d'un camion signifie :<br>'produit de nature à polluer les eaux'. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Des interdictions de circulation peuvent être mises en place pour les poids lourds lors des pics de pollution atmosphérique. Vrai ou faux ?</h4>
+    <div class="answer">Réponse 2 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Vous conduisez sans vous arrêter depuis 8 h 40 ce matin. Il est 12 h 40. Êtes‑vous en infraction ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Une huile multigrade classée SAE 20 W 40 peut‑elle être utilisée uniquement en hiver ?</h4>
+    <div class="answer">Réponse 4 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Suite au contrôle technique périodique, quelle lettre figure sur le certificat d’immatriculation lorsque le véhicule est accepté ?</h4>
+    <div class="answer">Réponse 5 : A ou la Lettre A</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Est‑il possible d’atteler une remorque de 26 t de PTAC, chargée au maximum, derrière un camion de 19 t de PTAC, chargé au maximum, alors que le PTRA indiqué sur la plaque de poids et surface du camion est de 40 t ?</h4>
+    <div class="answer">Réponse 6 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un camion de plus de 7,5 t de PTAC. Quand finit l’interdiction de circulation en fin de semaine ?</h4>
+    <div class="answer">Réponse 7 : Dimanche à 22 h ou Dimanche à 10 h du soir</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <div class="q-row">
+    <img src="images/fiche-ecrite/panneau-essieu.png" class="q-img" alt="Panneau hauteur">
+  <h4>Question 8 : Le poids indiqué dans ce signal concerne‑t‑il le poids maximal autorisé que peut supporter l’essieu ?</h4>
+  </div>
+  <div class="answer">Réponse 8 : Non</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous vous arrêtez pour faire le plein de carburant. Sur quel symbole devez‑vous positionner le sélecteur d’activité du chronotachygraphe ?</h4>
+    <div class="answer">Réponse 9 : Autres taches, marteaux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Existe‑t‑il des véhicules équipés de 2 ralentisseurs ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche3" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Les accidents graves entre un poids lourd sont majoritairement des accidents sans autre usager impliqué. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Vous conduisez votre véhicule personnel avec une alcoolémie de 1 g/l de sang. En cas de de condamnation, votre permis poids lourds peut-il être annulé ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : En double équipage, en France, vous êtes assis à côté du conducteur depuis 1 h. Pouvez-vous reprendre le volant ?</h4>
+    <div class="answer">Réponse 3 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Vous chargez du sable dans un véhicule isolé, quelle est la charge maximale autorisée sur l'essieu le plus chargé du groupe d'essieux moteur?</h4>
+    <div class="answer">Réponse 4 : 11,5 t ou 11,500 t ou 11 t 500</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/70-5,5t.png" class="q-img" alt="Panneau hauteur">
+    Question 5 : Mon véhicule a un poids à vide de 5 tonnes et un PTAC de 12 tonnes. Ce signal me concerne-t-il ?</h4>
+  <div class="answer">Réponse 5 : Oui</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Le contrôle et le remplissage du circuit de refroidissement s'effectuent plutôt moteur chaud ou moteur froid ?</h4>
+    <div class="answer">Réponse 7 : Moteur à froid ou A froid</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Votre camion, en charge, transporte des denrées périssables, avez-vous le droit de continuer votre trajet le samedi après 22 h?</h4>
+    <div class="answer">Réponse 7 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : Pour effectuer un transport national, pouvez-vous laisser la plaque avec la mention "TIR" visible à l'arrière de votre véhicule ?</h4>
+    <div class="answer">Réponse 8 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Sauf cas d'urgence, quelle est la durée de conduite maximale journalière autorisée en tenant compte des dérogations possibles ?</h4>
+    <div class="answer">Réponse 9 : 10 h ou 10 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : En règle générale, à quelle vitesse doit être réglé le limiteur de vitesse d'un tracteur routier neuf ?</h4>
+    <div class="answer">Réponse 10 : 90 km/h</div>
+  </div>
+</div>
+<div id="fiche4" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Ma remorque a un contour de sécurité arrière rétroréfléchissant de couleur rouge. En panne, je suis obligé de la laisser dételée sur la chaussée. Est-il obligatoire de placer le triangle de présignalisation ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Dans une entreprise, le chargement est effectué par un manutentionnaire. Une fois terminé, vous appartient-il d'effectuer le contrôle de l'arrimage avant de démarrer ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Au bout de comnien de jours, au maximum, l'entreprise doit-elle "télécharger" les donnés de votre carte conducteur ?</h4>
+    <div class="answer">Réponse 3 : 28 ou 28 jours</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quelle est la longueur maximale autorisée d'un ensemble porte-voitures ?</h4>
+    <div class="answer">Réponse 4 : 20,35 m</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Comment s'appelle le document qui doit accompagner la marchandise lors de tout transport pour compte d'autrui ?</h4>
+    <div class="answer">Réponse 5 : Lettre de voiture</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : En règle générale, les véhicules lourds utilisent deux batteries de 12 volts montées en ... ?</h4>
+    <div class="answer">Réponse 6 : Série</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Un pont dont la hauteur libre est de 5 m (au plus bas) sera obligatoirement signlé par un panneau de hauteur limitée. Vrai ou faux ?</h4>
+    <div class="answer">Réponse 7 : Faux</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/arbres-inclines.png" class="q-img" alt="Panneau hauteur">
+    Question 8 : Sur cette chausée la hauteur des arbres est suceptible d'être inférieure à 4,30 m. Vrai ou faux ?</h4>
+  <div class="answer">Réponse 8 : Vrai</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous avez fait une coupure de 2 h, quelle sera, au minimum, la durée (non réduite) de la période de repos que vous devez prendre à la fin de votre journée de travail pour être en règle vis-à-vis du repos journalier</h4>
+    <div class="answer">Réponse 9 : 11 h ou 11 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Dans un camion neuf, le passager doit-il obligatoirement attacher sa ceinture de sécurité ?</h4> 
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche5" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Le modèle français de constat amiable peut-il être utilisé dans les autres pays de l’Union européenne ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : En transport public, le destinataire doit-il vérifier l’état apparent de la marchandise ou des colis au moment de la livraison en présence du conducteur ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : En règle générale , vous est-il possible de modifier les activités enregistrées par le chronotachygraphe sur votre carte ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Le châssis d’un véhicule lourd est principalement constitué de longerons et de … ?</h4>
+    <div class="answer">Réponse 4 : Traverses</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/50-km-h-remorque.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Cette limitation de vitesse peut concerner les véhicules autres que les trains routiers, trains doubles et véhicules articulés ?</h4>
+    <div class="answer">Réponse 5 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Est-il possible d’atteler une remorque de 19t de PTAC, chargée au maximum , derrière un camion de 19 t de PTAC , chargé au maximum , alors que le PTRA indiqué sur la plaque de poids et surface du camion est de 40 t ?</h4>
+    <div class="answer">Réponse 6 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un ensemble routier neuf de 40 t de PTRA. A quel vitesse êtes-vous limité sur autoroute ?</h4>
+    <div class="answer">Réponse 7 : 90 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : En transport public , à bord de votre véhicule , vous devez posséder l’original ou une copie conforme de la licence communautaire de transport ?</h4>
+    <div class="answer">Réponse 8 : Une copie conforme</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : En règle générale quel est la durée minimale normale ( non réduite ) de repos hebdomadaire pour un conducteur de camions ?</h4>
+    <div class="answer">Réponse 9 : 45h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Une semi-remorque dételée doit-elle être munie d’un extincteur en état de fonctionner ?</h4>
+    <div class="answer">Réponse 10 : Non</div>
+  </div>
+</div>
+<div id="fiche6" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Encas d’accident, les données du chronotachygraphe numérique peuvent-elles servir de preuve dans le tribunal ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Au-delà de quel taux de surcharge ( en pourcentage – % ) le camion pourra – t – il être immobilisé, jusqu’au déchargement de l’excédent ?</h4>
+    <div class="answer">Réponse 2 : 5 ou 5% ou 5 pour cent</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Si , dans la même journée , vous conduisez un véhicule avec un chronotachygraphe numérique après avoir conduit un véhicule avec un chronotachygraphe à disque , devez-vous conserver le disque avec vous ?</h4>
+    <div class="answer">Réponse 3 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Certains éléments de la chaîne cinématique nécessite d’être vidangés ou … ?</h4>
+    <div class="answer">Réponse 4 : Graissés</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/interdiction-de-tourner-a-gauche-vehicule-marchandise.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Ce signal concerne uniquement les véhicules affectés au transport de marchandises excèdant 3500 kg de PTAC ?</h4>
+    <div class="answer">Réponse 5 : Non</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Je dois conduire un train routier de 32 tonnes de PTRA dont la somme des PTAC est 38 tonnes. Quel doit être le poids maximum du train routier lors d’un pesée sur bascule ?</h4>
+    <div class="answer">Réponse 6 : 32 t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un tracteur solo de 19 tonnes de PTAC et de 38 tonnes de PTRA. A quel vitesse êtes-vous limité sur autoroute ?</h4>
+    <div class="answer">Réponse 7 : 90 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : La lettre de voiture doit détailler la nature des marchandises transportées . Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 8 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Quand le repos journalier est fractionné, quelle doit être la durée minimale totale de ce repos ?</h4>
+    <div class="answer">Réponse 9 : 12h ou 12heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Vous chargez du gravier.Vous voulez connaître la charge maximale autorisée par essieu, vous pouvez la trouver sur la plaque du constructeur. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 10 : Vrai</div>
+  </div>
+</div>
+<div id="fiche7" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Une plaque orange sans aucune inscription, placée à l’arrière d’un camion signifie qu’il s’agit d’un transport de matières dangereuses circulant à vide. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Quelle est la catégorie du permis exigée pour conduire un véhicule de transport en commun articulé comportant 60 places circulant à vide ?</h4>
+    <div class="answer">Réponse 2 : D ou le permis D</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Quelle est , en heures , la durée maximale autorisée de conduite par période de deux semaines consécutives ?</h4>
+    <div class="answer">Réponse 3 : 90 h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Qu’aspire le moteur diesel lors du premier temps appelé « admission » ?</h4>
+    <div class="answer">Réponse 4 : De l’air</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Lors de la mise en circulation d’un véhicule de transport de marchandises de plus de 3,5 tonnes , vendu carrossé , quel est le délai maximal autorisé pour le présenter à la première visite technique ?</h4>
+    <div class="answer">Réponse 5 : 1 an ou 12 mois</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Quelle est la charge utile d’un véhicule dont le PTAC est de 26 tonnes et le poids à vide de 7 tonnes ?</h4>
+    <div class="answer">Réponse 6 : 19 t ou 19 tonnes</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Je conduis un véhicule articulé de 38 tonnes de PTRA pesant 14 tonnes a vide. Pour emprunter une route où une barrière de dégel à 12 tonnes avec mention demi-charge autorisée est en place , quel doit être le poids maximum de mon chargement ?</h4>
+    <div class="answer">Réponse 7 : 12 t ou 12 tonnes</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/descente-dangereuse.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : La descente dangereuse annoncée possède un dénivelé de 100 mètres pour chaque kilomètre parcouru ?</h4>
+    <div class="answer">Réponse 8 : Oui</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous avez interrompu votre conduite pendant 1h15 mn. Ce temps peut-il être pris en compte pour le calcul du temps de repos journalier ?</h4>
+    <div class="answer">Réponse 9 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Sur la plaque constructeur d’un véhicule porteur-remorqueur, on trouve inscrite la longueur maximale de l’ensemble que l’on peut constituer avec ce véhicule. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 10 : Faux</div>
+  </div>
+</div>
+<div id="fiche8" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Un X (ex:X362) inscrit à côté du nombre dans le rectangle du haut de la plaque orange placée à l’arrière d’un camion signifie: « produit ayant une réaction dangereuse avec l’eau ».Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : A partir de quel âge la périodicité du contrôle médical obligatoire pour le renouvellement du permis de conduire catégories C ou CE est-elle de 2 ans ?</h4>
+    <div class="answer">Réponse 2 : 60 ans</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Un premier arrêt de 15 mn sur un parking peut-il être considéré comme une pause ?</h4>
+    <div class="answer">Réponse 3 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : La somme des PTAC d’un train routier est de 45 tonnes et son PTRA est de 40 tonnes. Quel poids réel ne faut-il pas dépasser ?</h4>
+    <div class="answer">Réponse 4 : 40 t</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/acces-interdit-explosif.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Ce signal concerne les véhicules affectés au transport de produits dangereux ou au transport de produits explosifs ?</h4>
+    <div class="answer">Réponse 5 : Produits explosifs ou Explosifs</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Le turbocompresseur a pour fonction de diminuer l’air admis dans les cylindres ?</h4>
+    <div class="answer">Réponse 6 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un tracteur solo de 19 t de PTAC et de 38 t de PTRA. A quelle vitesse êtes-vous limité sur route unique à sens prioritaire ?</h4>
+    <div class="answer">Réponse 7 : 80 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : Le transport de pièce de grande longueur qui dépassent d’1 mètre à l’avant du camion entre dans la catégorie des transport exceptionnels. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 8 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Un chauffeur a conduit 20 heures la semaine précédente. Selon la règlementation sociale européenne, combien d’heurs maximum peut-il conduire la semaine en cours ?</h4>
+    <div class="answer">Réponse 9 : 56h ou 56 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : L’extincteur prévu pour les semi-remorques peut-être placé sur le tracteur. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 10 : Vrai</div>
+  </div>
+</div>
+<div id="fiche9" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : En cas d’accident dans lequel votre véhicule est en cause , les forces de l’ordre peuvent-elles imprimer le ticket qui correspond à la journée en cours ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Après l’obtention du permis CE , un conducteur possèdant le permis C et travaillant déjà dans une entreprise de transport doit-il suivre une formation complémentaire avant de conduire un véhicule articulé ?</h4>
+    <div class="answer">Réponse 2 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : En double équipage , le temps passé sur la couchette d’un véhicule en circulation , est-il considéré comme repos journalier ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quel sera le Poids Maximal Autorisé (PMA) pour le véhicule articulé suivant :
+      <br>– Tracteur PTRA : 38 t et Poids à Vide : 10 t
+      <br>– Semi-remorque PTAC : 22 t et Poids à Vide : 7 t</h4>
+    <div class="answer">Réponse 4 : 32 t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Lors d’un contrôle sur route , dois-je présenter un justificatif de l’employeur pour le ou les jour(s) non travaillé(s) ?</h4>
+    <div class="answer">Réponse 5 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Le circuit d’alimentation d’un moteur diesel se compose , entre autres éléments , de deux pompes : l’une dite pompe d’injection haute pression, l’autre est dite pompe … ?</h4>
+    <div class="answer">Réponse 6 : D’alimentation.</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : En remorquage occasionnel d’un véhicule isolé de transpport de marchandises , quelle est la longueur maximal autorisée de l’ensemble constitué ?</h4>
+    <div class="answer">Réponse 7 : 30 m</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/deviation.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Cette signalisation de présignalisation peut annoncer une barrière de dégel : Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 8 : Vrai</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Le conducteur d’un camion de plus de 7,5 tonnes effectuant une collecte de fruits est-il soumis à la règlementation sociale européenne ?</h4>
+    <div class="answer">Réponse 9 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Le principal avantage du système de freinage antibloquant est-il de réduire les distances de freinage ?</h4>
+    <div class="answer">Réponse 10 : Non</div>
+  </div>
+</div>
+<div id="fiche10" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Les accidents mortels entre un poids lourd et une voiture sont majoritairement des accidents avec des véhicules circulant dans le même sens. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Après un contrôle du poids , serez-vous passible d’une amende si la surcharge correspond à 4%(4 pour cent) du poid maximal autorisé ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Après 2 heures de conduite , quelle est la durée minimale d’un premier arrêt pouvant être pris en compte comme pause ?</h4>
+    <div class="answer">Réponse 3 : 15 min</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Les filtres à carburant ou filtres principaux sont situés entre la pompe d’alimentation et la pompe d’injection haute pression. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 4 : Vrai</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/vehicule-10m.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Ce signal concerne uniquement les véhicules isolés ?</h4>
+    <div class="answer">Réponse 5 : Non</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Quel sera le Poids Maximal Autorisé (PMA) pour l’ensemble suivant :
+      <br>- Porteur PTRA : 44 t et PTAC : 26 t
+      <br>- Remorque PTAC : 26 t et Poids à Vide : 7t</h4>
+    <div class="answer">Réponse 6 : 44t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Si les disques à l’arrière d’un camion (isolé), de 38 t de PTRA , sont  » 80 – 90  » , quels sont les disques placés à l’arrière de la remorque lorsque le train routier est formé ?</h4>
+    <div class="answer">Réponse 7 : 60 – 80 – 90</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : Un véhicule qui circule sous le régime « TIR » doit comporter un scellement effectuer par la douane du pays d’origine. Vrai ou Faux </h4>
+    <div class="answer">Réponse 8 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Un chauffeur a conduit 40 heures la semaine précédente. Selon la règlementation sociale européenne , combien d’heures maximum peut-il conduire la semaine en cours ?</h4>
+    <div class="answer">Réponse 9 : 50 h ou 50 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Ai-je le droit d’atteler une semi-remorque dont le type des pneumatiques est différents de celui du véhicule tracteur ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche11" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Le constat amiable d’accident peut-il constituer un preuve de responsabilité ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Circuler avec un seul pneu lisse ou détérioré n’entraîne  pas de contravention si le véhicule possède une roue de secours en bon état. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 2 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : La rémunération mensuelle d’un conducteur salariée peut-être calculée en fonction de la charge transportée pendant le mois. Vrai ou Faux ?/h4>
+    <div class="answer">Réponse 3 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quel sera le Poids Maximal Autorisé (PMA) pour l’ensemble suivant :
+      <br>– Porteur remorqueur PTRA : 44 t et PTAC : 26 t
+      <br>– Remorque PTAC : 14 t et Poids à Vide : 5 t</h4>
+    <div class="answer">Réponse 4 : 40 t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Comment appelle-t-on les transports exécutés à titre onéreux pour le compte d’un client ?</h4>
+    <div class="answer">Réponse 5 : Publics ou Comptes d’autrui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : L’embrayage est un organe mécanique nécessaire au passage des vitesses sur les seules boîtes mécaniques ?</h4>
+    <div class="answer">Réponse 6 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Hors agglomération , sur une route à double sens , vous suivez un camion à 70 km/h. Quel intervalle de sécurité minimum devez-vous respecter ?</h4>
+    <div class="answer">Réponse 7 : 50 m</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/interdiction-vehicule-plus-de-230-m.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Je circule avec un véhicule mesurant 2,30 mètre de large. A hauteur de ce signal, je peux continuer sur cette route ?</h4>
+    <div class="answer">Réponse 8 : Oui</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : En règle générale , quelle est la durée maximale de conduite journalière autorisée en respectant les temps de repos ?</h4>
+    <div class="answer">Réponse 9 : 9 h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Le frein de rupture agit-il uniquement sur les roues du véhicule remorqué ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche12" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Le modèle allemand , italien ou espagnol d’un constat européen d’accident , comporte-t-il les mêmes rubriques que le modèle français ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Débrancher ou modifier les réglages du limiteur de vitesse peut entraîner une suspension du permis de conduire , même s’il n’y a pas eu d’excès de vitesse constaté.Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 2 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Le conducteur peut-il bâcher ou débâcher son véhicule pendant une pause ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quel est le PTRA maximal d’un véhicule articulé comportant 4 essieux ?</h4>
+    <div class="answer">Réponse 4 : 38 t</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/voie-de-detresse-a-droite.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Ce signal m’annonce une voie de détresse qui sera située sur ma gauche?</h4>
+    <div class="answer">Réponse 5 : Non</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Faut-il un seul certificat d’immatriculation pour un ensemble de véhicules constitué d’un camion de 26 t auquel on a attelé un compresseur sur roues de 800 kg ?</h4>
+    <div class="answer">Réponse 6 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : La marche arrière sert à inverser le sens de rotation de l’arbre de transmission ?</h4>
+    <div class="answer">Réponse 7 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : Sur une autoroute à 4 voies , un véhicule articulé de 15 m de long peut-il effectuer un dépassement en empruntant la 3ème voie ?</h4>
+    <div class="answer">Réponse 8 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : En règle générale , quelle est la durée minimale normale (non réduite ) obligatoire de repos journalier lorsque celui-ci n’est pas fractionné ?</h4>
+    <div class="answer">Réponse 9 : 11 h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Si les disques à l’arrière du tracteur d’un véhicule articulé sont 60 – 80 – 90 , quels sont les disques placés à l’arrière de la semi-remorque ?</h4>
+    <div class="answer">Réponse 10 : 60 – 80 – 90</div>
+  </div>
+</div>
+<div id="fiche13" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Dans une longue descente , en cas de rupture de freins , si j’utilise une voie de détresse , le véhicule que je conduis sera – t – il gravement endommagé ?</h4>
+    <div class="answer">Réponse 1 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Je possède les catégories B – C et CE . Conduire ma voiture personnelle après avoir pris de la drogue peut entraîner la perte de la catégorie B de mon permis de conduire uniquement. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 2 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Quelle est la durée maximale autorisée de conduite continue pour un conducteur de camion ?</h4>
+    <div class="answer">Réponse 3 : 4 h 30 ou 4 h 30 mn</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quelle est la majoration maximale autorisée du PTRA d’un véhicule articulé équipé de 2 dispositifs ralentisseurs : un de 600 kg sur le tracteur et un de 400 kg sur la remorque ?</h4>
+    <div class="answer">Réponse 4 : 500 kg</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Lors d’un contrôle des temps de conduite et de repos sur la route , en plus de la journée en cours , sur quelle période devez-vous pouvoir présenter les données ?</h4>
+    <div class="answer">Réponse 5 : 56 jours</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Un court permet d’obtenir un couple plus important et une vitesse du véhicule plus faible . Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 6 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Sur une autoroute à 3 voies, un véhicule articulé de 15 m de long peut-il effectuer un dépassement en empruntant la 2 ème voie ?</h4>
+    <div class="answer">Réponse 7 : Oui</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/5.5.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Je circule , à vide, avec un véhicule de 5 tonnes de poids à vide et de 15 tonnes de PTAC. A hauteur de ce signal , je peux passer ?</h4>
+    <div class="answer">Réponse 8 : Non</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Pouvez-vous prendre votre temps de repos en couchette lorsque le véhicule est à l’arrêt ?</h4>
+    <div class="answer">Réponse 9 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Le système de freinage électronique (EBS) contrôle la répartition du freinage entre le véhicule tracteur et la remorque qui en sont équipés ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche14" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Pour diminuer les risques d’accidents , lors de la montée ou la descente d’un camion , de combien de points d’appui le conducteur doit-il se servir ?</h4>
+    <div class="answer">Réponse 1 : 3</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Lors d’un contrôle sur la route , est-il obligatoire de pouvoir présenter votre carte de qualification conducteur (CQC)?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Après 4h30 de conduite continue , quelle est la durée minimale de la pause que vous devez respecter ?</h4>
+    <div class="answer">Réponse 3 : 45 mn</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : La longueur d’un véhicule articulé se calcule en additionnant la longueur du tracteur routier et la longueur de la semi-remorque. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 4 : Faux</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/polluant.png" class="q-img" alt="Panneau hauteur">
+      Question 5 : Ce signal peut concerner les véhicules transportant une faible quantité de produits polluants ?</h4>
+    <div class="answer">Réponse 5 : Oui</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Le mécanisme de l’assistance de direction comprend une   » bielle pendante « . Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 6 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un ensemble routier neuf de 40 t de PTRA . A quelle vitesse êtes-vous limité sur route unique à sens prioritaire ?</h4>
+    <div class="answer">Réponse 7 : 80 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 8 : Tout véhicule effectuant un transport international doit porter à l’arrière une plaque avec la mention  » TIR  » Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 8 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : L’amplitude de la journée de travail d’un conducteur routier comprend le temps de service et les pauses. Vrai ou  Faux ?</h4>
+    <div class="answer">Réponse 9 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : En général , un  véhicule articulé neuf doit être équipé d’un extincteur à poudre de 6 kg placé à l’extérieur. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 10 : Vrai</div>
+  </div>
+</div>
+<div id="fiche15" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Les accidents corporels entre un poids lourd et une voiture se produisent en majorité dans les intersections. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Quelle est la périodicité des Formations Continues Obligatoires des conducteurs routiers ?</h4>
+    <div class="answer">Réponse 2 : 5 ans</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Après 3 heures de conduite continue , s’arrêter 10 mn sur un parking est-il considéré comme une pause ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Quand j’attelle une semi-remorque porte-voitures à mon tracteur , quelle longueur ne doit pas dépasser le véhicule articulé ainsi constitué?</h4>
+    <div class="answer">Réponse 4 : 16,50 m</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Combien de certificat (s) d’immatriculation est/sont attribué(s) à un véhicule articulé ?</h4>
+    <div class="answer">Réponse 5 : 2</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Quel type de suspension équipe généralement les véhicules lourds permettant de régler la hauteur du véhicule ?</h4>
+    <div class="answer">Réponse 6 : La suspension pneumatique  ou Pneumatique</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Le véhicule porteur-remorqueur d’un train routier  a un PTRA de 38 t. Quelles sont les vitesses indiquées à l’arrière de la remorque ?</h4>
+    <div class="answer">Réponse 7 : 60 – 80 – 90 ou 60 km/h – 80 km/h – 90 km/h</div>
+  </div>
+<div class="question" onclick="toggleAnswer(this)">
+  <h4 class="q-row">
+    <img src="images/fiche-ecrite/panneau_obligation_voie_bus.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Ce signal m’indique un arrêt d’autobus. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 8 : Faux</div>
+</div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : En double équipage , en France , vous êtes assis à côté du conducteur.Votre temps de conduite continue est-il interrompu ?</h4>
+    <div class="answer">Réponse 9 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : En circulation, le fait de freiner désactive obligatoirement ler régulateur de vitesse. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 10 : Vrai</div>
+  </div>
+</div>
+<div id="fiche16" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Quand je circule en Espagne, quel numéro de téléphone est-il conseillé d’utiliser pour appeler les secours à partir d’un portable ?</h4>
+    <div class="answer">Réponse 1 : 112</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Si je perds tous les points de mon permis de conduire à la suite d’infractions commises au volant de ma voiture personnelle, pourrai-je continuer à conduire mon camion ?</h4>
+    <div class="answer">Réponse 2 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Vous avez interrompu votre conduite pendant 45 min. Ce temps peut-il être pris en compte pour le calcul du temps de repos journalier ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Mon camion de 20 t de PTAC est chargé au maximum. Son PTRA est de 40 t. Si je dois atteler une remorque de 26 t de PTAC, quel doit être le poids réel maximal de la remorque ?</h4>
+    <div class="answer">Réponse 4 : 20 t</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Dans le cadre du transport public, peut-il y avoir une seule lettre de voiture (avec état récapitulatif) dans le véhicule pour un transport comportant plusieurs destinataires dans la même journée ?</h4>
+    <div class="answer">Réponse 5 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Le recreusage des pneumatiques est une opération qui peut s’effectuer uniquement par un spécialiste ?</h4>
+    <div class="answer">Réponse 6 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un véhicule de 38 t de PTRA. En règle générale, quand débute l’interdiction de circulation en fin de semaine ?</h4>
+    <div class="answer">Réponse 7 : Samedi à 22h ou samedi à 10 h du soir</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4 class="q-row">
+      <img src="images/fiche-ecrite/transport-produit-dangereux.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Ce signal concerne les véhicules affectés aux seuls transports de produits polluants ?
+    </h4>
+    <div class="answer">Réponse 8 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Votre véhicule est équipé d’un chronotachygraphe numérique. Vous avez perdu votre carte "conducteur", combien de jours au maximum pouvez-vous conduire sans carte ?</h4>
+    <div class="answer">Réponse 9 : 15 ou 15 jours</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Un dolly (ou diabolo) pesant 600 kg doit-il être immatriculé ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche17" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : En moyenne, il y a plus d’accidents graves impliquant un poids lourd les samedis et veilles de jours fériés que les jours de la semaine. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Sur une route à double sens limité à 70 km/h, lors d’un contrôle routier, votre carte conducteur indique que vous rouliez à 80 km/h. Pouvez-vous être sanctionné ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : La règlementation sociale européenne s’applique-t-elle à un conducteur non salarié propriétaire de son véhicule ?</h4>
+    <div class="answer">Réponse 3 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Lorsque le conducteur serre le frein de parc, le cylindre de frein à ressort se remplit d’air. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 4 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Suite au contrôle technique périodique, lorsque le véhicule est refusé sans interdiction de circuler, dans quel délai maximum la contre-visite doit-elle être effectuée pour éviter une visite technique complète ?</h4>
+    <div class="answer">Réponse 5 : 1 mois</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Mon camion a un PTRA de 40 t et un PV de 10 t. Si le camion est vide, ai-je le droit d’atteler une remorque dont le poids réel est de 15 t ?</h4>
+    <div class="answer">Réponse 6 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un véhicule articulé neuf de 38 t de PTRA. À quelle vitesse êtes-vous limité sur route non prioritaire ?</h4>
+    <div class="answer">Réponse 7 : 60 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4 class="q-row">
+      <img src="images/fiche-ecrite/accotement-meuble.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Par temps sec, ce signal me concerne ?
+    </h4>
+    <div class="answer">Réponse 8 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous attendez votre tour pour décharger sans connaître le temps d’attente. Sur quel symbole devez-vous positionner le sélecteur d’activité du chronotachygraphe ?</h4>
+    <div class="answer">Réponse 9 : Autres tâches, marteaux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Les disques de limitation de vitesse apposés à l’arrière d’un semi-remorque sont-ils identiques à ceux du tracteur routier ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche18" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Un X (ex: X83) inscrit à côté du nombre dans le rectangle du haut de la plaque orange placée à l’arrière d’un camion signifie : "produit très inflammable". Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 1 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : En cas de récidive de grand excès de vitesse, une suspension du permis peut être assortie d’un permis limité à la conduite professionnelle si l’infraction a été commise avec la voiture personnelle du chauffeur. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 2 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Vous conduisez sans vous arrêter depuis 8h ce matin. Il est 12h40. Êtes-vous en infraction ?</h4>
+    <div class="answer">Réponse 3 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Le circuit de freinage européen rend le freinage de l’essieu avant indépendant du freinage de l’essieu arrière. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 4 : Vrai</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : La licence de transport intérieur permet d’effectuer un transport avec un véhicule de 38 t à condition de rester en France. Vrai ou Faux ?</h4>
+    <div class="answer">Réponse 5 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Mon camion a un PTRA de 40 t et PV de 10 t. Si le camion est vide, ai-je le droit d’atteler une remorque dont le poids réel est de 13 t ?</h4>
+    <div class="answer">Réponse 6 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Vous conduisez un véhicule articulé neuf de 38 t de PTRA. À quelle vitesse êtes-vous limité sur route prioritaire à chaussées séparées ?</h4>
+    <div class="answer">Réponse 7 : 80 km/h</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4 class="q-row">
+      <img src="images/fiche-ecrite/panneau-camion-interdiction-de-depasser.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Ce signal interdit de dépasser les seuls véhicules dont le PTAC dépasse 3,5 tonnes ?
+    </h4>
+    <div class="answer">Réponse 8 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Un chauffeur a conduit 50 heures la semaine précédente. Selon la réglementation sociale européenne, combien d’heures maximum peut-il conduire la semaine en cours ?</h4>
+    <div class="answer">Réponse 9 : 40 h ou 40 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Le système de contrôle électronique de stabilité (ESP) agit principalement en virage ?</h4>
+    <div class="answer">Réponse 10 : Oui</div>
+  </div>
+</div>
+<div id="fiche19" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : Dans le transport routier , c’est pendant le travail , hors conduite , que l’on dénombre le plus fort taux d’accidents chez les conducteurs ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Vous n’avez pas mis de carte dans le chronotachygraphe numérique , lors d’un contrôle sur route , sera-t-il possible de contrôler vos temps de conduite ?</h4>
+    <div class="answer">Réponse 2 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : En double équipage, lorsque le véhicule est en circulation depuis plus de 45 minutes , le conducteur qui n’est pas au volant est-il considéré au repos ?</h4>
+    <div class="answer">Réponse 3 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Le dispositif antiblocage de roues (ABS) peut-il fonctionner en même temps que le ou les dispositifs ralentisseurs ?</h4>
+    <div class="answer">Réponse 4 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Suite au contrôle technique périodique , quelle lettre figure sur le certificat d’immatriculation lorsque le véhicule est refusé avec interdiction de circuler ?</h4>
+    <div class="answer">Réponse 5 : R ou la lettre R</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : Vous chargez du sable dans une semi-remorque , quelle peut-être la charge maximale autorisée sur l’essieu le plus chargé du groupe d’essieux arrière ?</h4>
+    <div class="answer">Réponse 6 : 10,5 t ou 10,500t ou 10t500</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Je conduis un camion de 26 t de PTAC et de 10 t de PV . pour emprunter une route où une barrière de dégel à 12 t avec mention demi-charge autorisée , est en place ,  quel doit être le poids maximum de mon chargement </h4>
+    <div class="answer">Réponse 7 : 8 t  ou 8 tonnes</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4 class="q-row">
+      <img src="images/fiche-ecrite/carrefour-giratoire.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : En agglomération , ce signal est implanté 50 mètres avant le carrefour à sens giratoire ?</h4>
+    <div class="answer">Réponse 8 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous avez fait une coupure de 4 heures (repos) quelle sera , au minimum , la durée de la période de repos suivante pour être en règle vis-à-vis du repos journalier ?</h4>
+    <div class="answer">Réponse 9 : 9 h  ou 9 heures</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : En général , de combien d’extincteur(s) doit être équipé un véhicule articulé neuf ?</h4>
+    <div class="answer">Réponse 10 : 2</div>
+  </div>
+</div>
+<div id="fiche20" class="sous-tab-content">
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 1 : En cas d’accident dans lequel votre véhicule est en cause , les forces de l’ordre peuvent-elles saisir votre carte  » conducteur  » ?</h4>
+    <div class="answer">Réponse 1 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 2 : Votre permis porte la mention  » 01:dispositif de correction et/ou de protection de la vision. »Avez-vous le droit de conduire sans porter de lunettes ou de lentilles ?</h4>
+    <div class="answer">Réponse 2 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 3 : Un temps de conduite de 4h30 peut-être fractionné au plus , par combien de pause(s)?</h4>
+    <div class="answer">Réponse 3 : 2</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 4 : Vous conduisez un train routier.Quelle peut-être sa longueur maximale ?</h4>
+    <div class="answer">Réponse 4 : 18,75 m</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 5 : Comment appelle-t-on les transports exécutés à titre onéreux pour le compte d'un client ?</h4>
+    <div class="answer">Réponse 5 : Publics ou Compte d'autrui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 6 : En principe le ralentisseur hydraulique est située sur … ?</h4>
+    <div class="answer">Réponse 6 : La transmission ou l’arbre de transmission</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 7 : Un pont dont la hauteur libre est de 5 m (au plus bas) sera obligatoirement signalé par un panneau de hauteur limitée. Vrai ou faux ?</h4>
+    <div class="answer">Réponse 7 : Faux</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4 class="q-row">
+      <img src="images/fiche-ecrite/carrefour-giratoire.png" class="q-img" alt="Panneau hauteur">
+      Question 8 : Hors agglomération , ce signal est implanté 100 mètres avant le carrefour à sens giratoire ?</h4>
+    <div class="answer">Réponse 8 : Non</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 9 : Vous conduisez un véhicule spécialisé de dépannage. Êtes-vous soumis à la règlementation sociale européenne concernant les temps de conduite et de repos si vous ramenez une voiture de Lille à Marseille ?</h4>
+    <div class="answer">Réponse 9 : Oui</div>
+  </div>
+  <div class="question" onclick="toggleAnswer(this)">
+    <h4>Question 10 : Les disques de limitation de vitesse apposés à l’arrière d’une remorque sont-ils identiques à ceux placés à l’arrière du camion ?</h4>
+    <div class="answer">Réponse 10 : Non</div>
+  </div>
+</div>
+  </div>
+</div>
+  <script src="js/script.js"></script>
+</body>
+</html>
