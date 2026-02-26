@@ -1,13 +1,11 @@
-const cacheName = 'permisce-cache-v1';
-const assetsToCache = [
-  './index.html',
-  './style.css',
-  './app.js',
-  './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
-];
-
+"icons": [
+  {
+      "src": "https://www.pwabuilder.com/assets/icons/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+  }
+]
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName)
@@ -26,3 +24,4 @@ if ('serviceWorker' in navigator) {
     .catch(err => console.log('Erreur Service Worker', err));
 }
 });
+
